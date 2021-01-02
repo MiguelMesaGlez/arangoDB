@@ -54,10 +54,11 @@ Durante la instalación aparecerán ciertas preguntas sobre la configuración qu
   $ sudo systemctl enable arangodb3
 ```
 
-Para comprobar que se ha inciaciado correctamente, podemos utilizar el siguiente comando y debería aparecer como "running".
+Para comprobar que se ha inciaciado correctamente, podemos utilizar el siguiente comando:
 ```batch
   $ systemctl status arangodb3
 ```
+Una vez ejecutado, se mostrará la siguiente información por pantalla y comprobaremos que el estado sea **active(running)**.
 ```batch
 ● arangodb3.service - ArangoDB database server
      Loaded: loaded (/lib/systemd/system/arangodb3.service; enabled; vendor preset: enabled)
@@ -93,6 +94,7 @@ ene 01 22:35:41 mbd-VirtualBox arangod[696]: 2021-01-01T21:35:41Z [696] WARNING 
 ```batch
   $ arangosh
 ```
+Una vez ejecutado este comando solo será necasario introducir la contraseña para el usuario root que hemos creado durante la instalación para acceder a la shell de ArangoDB
 ```batch
 Please specify a password: 
 
