@@ -27,17 +27,24 @@
 ```
 Durante la instalación aparecerán ciertas preguntas sobre la configuración que se utilizará para la instalación. 
 
-   4.1. Configurar la contraseña para root.   
-    Introducir la contraseña y confirmarla (password)
+   * Configurar la contraseña para root.   
+     Introducir la contraseña y confirmarla (password)
+     
+     <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion1.png" width="1000">
+      
+   * Seleccionar si actualizar automaticamente los ficheros de la base de datos.
+   
+     <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion3.png" width="1000">
+
+   * Elegir motor de almacenamiento de la base de datos a utilizar. (Este paso no me ha salido)
+     * auto
+     * rocksdb (default)
+     * mmfiles
     
-   4.2.  Seleccionar si actualizar automaticamente los ficheros de la base de datos.
-    
-   4.3.  Elegir motor de almacenamiento de la base de datos a utilizar. (Este paso no me ha salido)
-      auto
-      rocksdb
-      mmfiles
-    
-   4.4. Configurar para crear un backup de los archivos de la base de datos antes de hacer una actualización
+   * Configurar para crear un backup de los archivos de la base de datos antes de hacer una actualización
+
+     <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion4.png" width="1000">
+
 
 5. Iniciar arangoDB
 ```batch
@@ -49,8 +56,11 @@ Para comprobar que se ha inciaciado correctamente, podemos utilizar el siguiente
 ```batch
   $ systemctl status arangodb3
 ```
+<img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/arangoDB%20status.PNG" width="1000">
+
 
 6. Lanzar la shell de arangoDB
 ```batch
   $ arangosh
 ```
+<img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/arangosh.png" width="1000">
