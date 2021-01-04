@@ -6,6 +6,10 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
 
    ```batch brew install arangodb```
    
+   ArangoDB se encontrará instalado actualmente en la versión 3.7.0 de la siguiente manera
+   
+  ```batch /usr/local/Cellar/arangodb/<VERSION>/sbin/arangod```
+   
    
   Se podrá encontrar más información en la siguiente url https://www.arangodb.com/docs/stable/installation-mac-osx.html
 
