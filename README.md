@@ -16,5 +16,5 @@ En esta sección se inncluye todos los archivos necesarios para realizar una dem
 ## Autores ✒️
 * **Alejandro Lago Prego** - 
 * **Miguel Ángel Mesa González** - [MiguelMesaGlez](https://github.com/MiguelMesaGlez)
-* **Pilar Molina Tirado** - 
-* **Hector Barnard  Morales Valdiviezo** -
+* **Pilar Molina Tirado** - [Pilar Molina Tirado](https://github.com/piilimolina)
+* **Hector Barnard  Morales Valdiviezo** - 
