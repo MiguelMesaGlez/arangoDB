@@ -21,4 +21,4 @@ En esta sección se inncluye todos los archivos necesarios para realizar una dem
 * **Alejandro Lago Prego** - 
 * **Miguel Ángel Mesa González** - [MiguelMesaGlez](https://github.com/MiguelMesaGlez)
 * **Pilar Molina Tirado** - [Pilar Molina Tirado](https://github.com/piilimolina)
-* **Hector Barnard  Morales Valdiviezo** - 
+* **Hector Barnard  Morales Valdiviezo** - [Hector Morales](https://github.com/21819966)
