@@ -137,7 +137,7 @@ Se podrá encontrar más información en la siguiente url https://www.arangodb.c
 
 ## Windows 
 
-* Para realizar la instalación de ArangoDB de Windows se necesita descargar el Paquete NSIS que contiene dos archivos.
+* Para realizar la instalación de ArangoDB en Windows se necesita descargar el Paquete NSIS que contiene dos archivos.
 
     -Servidor 3.7.5
 
@@ -147,21 +147,21 @@ Se podrá encontrar más información en la siguiente url https://www.arangodb.c
     
 
 * Al descargar el primer archivo, obtienes una ventanilla para iniciar la instalación del interfaz ArangoDB 3.7.5.
-       <kbd>
-       <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window1.png" width="300" >
-       </kbd>
+  <kbd>
+  <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window1.png" width="400" >
+  </kbd>
 
 * La instalación tiene una duración de 2 a 5 minutos y tienes que registrar una contraseña para poder iniciar más adelante y por default, el usuario es root y el programa crea     un acceso directo en tu escritorio de Windows.
-       <kbd>
-       <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window2.png" width="300" >
-       </kbd>
+  <kbd>
+  <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window2.png" width="400" >
+  </kbd>
 
 * En el segundo archivo obtienes las herramientas clientes de ArangoDB, la cual te abre una ventana azul para seguir con las instrucciones.
-       <kbd>
-       <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window3.png" width="300" >
-       </kbd>
+  <kbd>
+  <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window3.png" width="400" >
+  </kbd>
 
 * Una vez instalado, te permite iniciar Arango DB.
-       <kbd>
-       <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window4.png" width="300" >
-       </kbd>
+  <kbd>
+  <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window4.png" width="400" >
+  </kbd>
