@@ -11,7 +11,7 @@ Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie
   - Concesión de permisos sobre este nuevo usuario
   - Exit de la base de datos _system
   - Exit como usuario **root**
-  - Ingresamos a "localhost:8529" como **userArango**
+  - Ingresamos a *localhost:8529* como **userArango**
   - Seleccionamos la base de datos **Airports** para trabajar sobre ella
 
 En segundo lugar realizaremos una serie de consultas para probar la potencia que puede llegar a alcanzar ArangoDB, asi como para conocer el tipo de consultas que podemos realizar con los datos seleccionados.
@@ -159,14 +159,39 @@ FOR c IN Travellers
 
 #### VI.- Creación de un índice tipo: Geoespacial
 
-Para llevar a cabo operaciones de geolocalización, deberemos crear un índice de tipo Geo
-<kbd>
-  <img src= "https://github.com/MiguelMesaGlez/arangoDB/demo/instalacion/ficherosAdicionales/imagenes/GeoJson.png">
-</kbd>
+Para llevar a cabo operaciones de geolocalización, deberemos crear un índice de tipo Geo, para ello, habrá que realizar los siguientes pasos:
+- Acceder al *tab* colecciones
+- Acceder click a la colección de Airports
+- Acceder en el *tap* de *Indexes*
+- Hacer click en el botón con el símbolo de "+"
+- Cambiar el tipo a *Geo Index*
+- Escribir *coordinates* en el campo Fields
+- Hacer click en crear
+
+En caso de necesitar más información, les recomendamos visitar la siguiente url: 
+
+<img src= "https://github.com/MiguelMesaGlez/arangoDB/blob/demo/ficherosAdicionales/imagenes/GeoJson.png" width = "750">
 
 #### VII.- Conocer aeropuertos más cercanos  a una persona por rango
 
 ```batch
+FOR a in Viajeros 
+    LET coordviajero = [a.coordinates[0], a.coordinates[1]]
+        FOR loc IN Airports
+            LET distance = DISTANCE(loc.coordinates[0], loc.coordinates[1], a.coordinates[0], a.coordinates[1])
+            SORT distance
+            FILTER distance < 2000 * 1000
+
+            RETURN {
+            viajero: a.name,
+            debe_ir_a: loc.name,
+            latitude: loc.coordinates[0],
+            longitude: loc.coordinates[1],
+            latitude_viajero: a.coordinates[0],
+            longitude_viajero: a.coordinates[1],
+            distance: (distance/1000)
+            }
+
 
 ```
 
@@ -174,6 +199,10 @@ Para llevar a cabo operaciones de geolocalización, deberemos crear un índice d
 #### VII.- Vuelos salientes en modo de grafo de un país
 
 ```batch
-
+FOR airport IN airports
+    FILTER airport.iso_country == "ES"
+        FOR v, e, p IN 1..1 OUTBOUND 
+            airport flights
+            RETURN p
 ```
 
