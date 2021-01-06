@@ -10,7 +10,8 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener instalad
   Se podrá encontrar más información en la siguiente url https://brew.sh/index_es
   
 - Windows
-  Explicacion
+  Explicacion.
+  Para realizar la instalación en windows únicamente es necesario instalar dos paquetes.
   
 - Linux
   Explicación
