@@ -166,6 +166,7 @@ Para llevar a cabo operaciones de geolocalización, deberemos crear un índice d
 - Hacer click en el botón con el símbolo de "+"
 - Cambiar el tipo a *Geo Index*
 - Escribir *coordinates* en el campo Fields
+- Escribir el nombre que deseemos en el campo Nombre
 - Hacer click en crear
 
 En caso de necesitar más información, les recomendamos visitar la siguiente url: 
