@@ -19,17 +19,17 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
 ### Índice de consultas AQL
 
 0. Operaciones CRUD básicas
-1. Búsqueda de los aeropuertos de un país
-2. Búsqueda del país de un aeropuerto
-3. Modificación de los traits filtrando por un campo y añadir .campo
-4. Conocer situación geográfica de los aeropuertos
-5. Conocer aeropuertos más cercanos a una persona
-6. Creación índice Geoespacial
-7. Conocer aeropuertos más cercanos a una persona por rango
-8. Vuelos salientes de un país en concreto
+I. Búsqueda de los aeropuertos de un país
+II. Búsqueda del país de un aeropuerto
+III. Modificación de los traits con y sin filtrado
+IV. Conocer situación geográfica de los aeropuertos
+V. Conocer aeropuertos más cercanos a una persona
+VI. Creación índice Geoespacial
+VII. Conocer aeropuertos más cercanos a una persona por rango
+VIII. Vuelos salientes de un país en concreto
 
 
-
+# Consultas AQL
 #### 0.- Operaciones CRUD básicas
 
   - Create
@@ -55,47 +55,60 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
   ```
 
   - Update
-  ```
-  UPDATE "KeflavikInternationalAirport" 
+  ```batch 
+    UPDATE "KeflavikInternationalAirport" 
       WITH { elevation_ft: 182 
       } IN Airports
   ```
 
   - Delete
   
-  ```
-  REMOVE "KeflavikInternationalAirport" 
-  IN Airports
+  ```batch 
+    REMOVE "KeflavikInternationalAirport" 
+      IN Airports
   ```
   También podemos llevar a cabo la eliminación de todos los documentos de una colección de la siguiente manera:
   
-  ```FOR airport IN Airports
+  ```batch 
+    FOR airport IN Airports
         REMOVE airport IN Airports      
   ```
 
 
-#### 1.- Búsqueda de los aeropuertos de un país
+#### I.- Búsqueda de los aeropuertos de un país
+
+```batch 
+  FOR airports IN Aiports
+      FILTER airport.iso_country == "ES"
+      RETURN airport.name
+ ```
+
+#### II.- Búsqueda del país de un aeropuerto
+
+```batch 
+  FOR airports IN Aiports
+      FILTER airport.name == "London Luton Airport"
+      RETURN airport.iso_country
+ ```
+
+#### III.- Modificación de los traits con y sin filtrado
+```
 
 
-
-#### 2.- Búsqueda del país de un aeropuerto
-
+```
 
 
-#### 3.- Modificación de los traits filtrando
+#### IV.- Conocer situación geográfica de los aeropuertos
 
 
-#### 4.- Conocer situación geográfica de los aeropuertos
+#### V.- Conocer aeropuertos más cercanos a una persona
 
 
-#### 5.- Conocer aeropuertos más cercanos a una persona
+#### VI.- Creación de un índice tipo: Geoespacial
 
 
-#### 6.- Creación de un índice tipo: Geoespacial
+#### VII.- Conocer aeropuertos más cercanos  a una persona por rango
 
 
-#### 7.- Conocer aeropuertos más cercanos  a una persona por rango
-
-
-#### 8.- Vuelos salientes en modo de grafo de un país
+#### VII.- Vuelos salientes en modo de grafo de un país
 
