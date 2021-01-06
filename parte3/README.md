@@ -1,10 +1,22 @@
 # Parte III: Demo 🛠️
 
--- Consultas AQL --
+### Antes de comenzar
 
-- Creación de base de datos Airports
-- Creación de un nuevo usuario y acceso a la BBDD
+Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie de operaciones necesarias para llevar a cabo la posterior realización de consultas en nuestra base de datos, para ello deberemos realizar lo siguiente:
 
+  - Ingresaremos a *localhost:8529* como **root** 
+  - Creación de base de datos **Airports**
+  - Creación de un nuevo usuario 
+    ej. userArango password: mypwd
+  - Concesión de permisos sobre este nuevo usuario
+  - Exit de la base de datos _system
+  - Exit como usuario **root**
+  - Ingresamos a "localhost:8529" como **userArango**
+  - Seleccionamos la base de datos **Airports** para trabajar sobre ella
+
+En segundo lugar realizaremos una serie de consultas para probar la potencia que puede llegar a alcanzar ArangoDB, asi como para conocer el tipo de consultas que podemos realizar con los datos seleccionados.
+
+### Índice de consultas AQL
 
 0. Operaciones CRUD básicas
 1. Búsqueda de los aeropuertos de un país
@@ -17,7 +29,9 @@
 8. Vuelos salientes de un país en concreto
 
 
-0. Operaciones CRUD básicas
+
+#### 0. Operaciones CRUD básicas
+
   - Create
 
   - Read
