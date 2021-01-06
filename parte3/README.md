@@ -92,11 +92,19 @@ VIII. Vuelos salientes de un país en concreto
  ```
 
 #### III.- Modificación de los traits con y sin filtrado
+```batch
+FOR c IN Travellers
+    RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
 ```
-
-
+Modificamos el valor de un atributo, de esta manera no es necesario modificar todos los documentos que contienen dicho atributo.
+```batch
+UPDATE "Y" WITH { en: "efficient" } IN Traits
 ```
-
+Mostramos nuevamente los viajeros y sus atributos para observar el cambio.
+```batch
+FOR c IN Travellers
+  RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
+```
 
 #### IV.- Conocer situación geográfica de los aeropuertos
 
