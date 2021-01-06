@@ -161,7 +161,7 @@ Se podrá encontrar más información en la siguiente url https://www.arangodb.c
   <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window3.png" width="400" >
   </kbd>
 
-* Una vez instalado, te permite iniciar Arango DB.
+* Una vez instalado, te permite iniciar Arango DB iniciando primero la contraseña que hemos registrado en la instalación.
   <kbd>
   <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window4.png" width="400" >
   </kbd>
