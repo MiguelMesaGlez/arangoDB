@@ -144,13 +144,24 @@ Se podrá encontrar más información en la siguiente url https://www.arangodb.c
     -Herramientas cliente 3.7.5
 
     Si necesitas más información sobre las actualizaciones del paquete podras consultarlo en la siguiente url: https://www.arangodb.com/download-major/windows/ 
+    
 
 * Al descargar el primer archivo, obtienes una ventanilla para iniciar la instalación del interfaz ArangoDB 3.7.5.
-
-
+          <kbd>
+          <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window1.png" width="300" >
+          </kbd>
 
 * La instalación tiene una duración de 2 a 5 minutos y tienes que registrar una contraseña para poder iniciar más adelante y por default, el usuario es root y el programa crea     un acceso directo en tu escritorio de Windows.
+          <kbd>
+          <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window2.png" width="300" >
+          </kbd>
 
 * En el segundo archivo obtienes las herramientas clientes de ArangoDB, la cual te abre una ventana azul para seguir con las instrucciones.
+       <kbd>
+       <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window3.png" width="300" >
+       </kbd>
 
-* Una vez instalado, te permite iniciar Arango DB
+* Una vez instalado, te permite iniciar Arango DB.
+       <kbd>
+       <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window4.png" width="300" >
+       </kbd>
