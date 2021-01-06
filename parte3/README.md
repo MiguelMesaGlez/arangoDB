@@ -161,7 +161,7 @@ FOR c IN Travellers
 
 Para llevar a cabo operaciones de geolocalización, deberemos crear un índice de tipo Geo
 <kbd>
-  <img src= "https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/GeoJson.png">
+  <img src= "https://github.com/MiguelMesaGlez/arangoDB/demo/instalacion/ficherosAdicionales/imagenes/GeoJson.png">
 </kbd>
 
 #### VII.- Conocer aeropuertos más cercanos  a una persona por rango
