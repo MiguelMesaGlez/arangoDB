@@ -136,4 +136,21 @@ Para realizar la instalación de ArangoDB en el sistema operativo MacOS deberemo
 Se podrá encontrar más información en la siguiente url https://www.arangodb.com/docs/stable/installation-mac-osx.html
 
 ## Windows 
-   Explicacion
+
+* Para realizar la instalación de ArangoDB de Windows se necesita descargar el Paquete NSIS que contiene dos archivos.
+
+    -Servidor 3.7.5
+
+    -Herramientas cliente 3.7.5
+
+    Si necesitas más información sobre las actualizaciones del paquete podras consultarlo en la siguiente url: https://www.arangodb.com/download-major/windows/ 
+
+* Al descargar el primer archivo, obtienes una ventanilla para iniciar la instalación del interfaz ArangoDB 3.7.5.
+
+
+
+* La instalación tiene una duración de 2 a 5 minutos y tienes que registrar una contraseña para poder iniciar más adelante y por default, el usuario es root y el programa crea     un acceso directo en tu escritorio de Windows.
+
+* En el segundo archivo obtienes las herramientas clientes de ArangoDB, la cual te abre una ventana azul para seguir con las instrucciones.
+
+* Una vez instalado, te permite iniciar Arango DB
