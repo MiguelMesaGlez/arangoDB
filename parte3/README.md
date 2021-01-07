@@ -162,7 +162,7 @@ FOR c IN Travellers
 Para llevar a cabo operaciones de geolocalización, deberemos crear un índice de tipo Geo, para ello, habrá que realizar los siguientes pasos:
 - Acceder al *tab* colecciones
 - Acceder click a la colección de Airports
-- Acceder en el *tap* de *Indexes*
+- Acceder en el *tab* de *Indexes*
 - Hacer click en el botón con el símbolo de "+"
 - Cambiar el tipo a *Geo Index*
 - Escribir *coordinates* en el campo Fields
@@ -207,3 +207,42 @@ FOR airport IN airports
             RETURN p
 ```
 
+#### VIII.- Operaciones de agrupación y agregación
+```batch
+FOR airport IN airports
+  COLLECT country = airport.iso_country INTO groups = airport.name
+  RETURN {
+    "country":country,
+    "airportsInCountry":groups
+  }  
+```
+
+
+#### IX.- Comparación del rendimiento de una consulta con la creación de dos indices
+
+Lo primero que haremos sera ejecutar la consulta y comprobar tanto el tiempo como el plan de ejecución de esta.
+```batch
+FOR flight IN flights2
+  FILTER flight.day == "15" AND flight.MONTH == "1"
+  RETURN flight
+```
+
+Después crearemos el primero de los indices que se creará sobre el campo mes. NOTA: los pasos que describiremos a continuación se deben realizar desde la interzar web de ArangoDB
+- Acceder al *tab* colecciones
+- Acceder click a la colección de flights2
+- Acceder en el *tab* de *Indexes*
+- Hacer click en el botón con el símbolo de "+"
+- Cambiar el tipo a *Permanent Index*
+- Escribir *month* en el campo Fields
+- Escribir el nombre que deseemos en el campo Nombre 
+- Hacer click en crear
+
+Una vez creado el indice podemos volver a lanzar la consulta y comprobar cual ha sido la mejoría respecto a la ejecución anterior. Hecho esto podemos pasar a crear el segundo indice. Para ello, solo habrá que repetir los mismos pasas que en el anterior, cambiando la información introducida en el campo Fields por *day,month* y introduciendo un nombre distinto. Tras ejecutar la misma query podremos ver una mayor mejoría.
+
+Finalmente, vamos a realziar una leve modificiación sobre la consulta y ver que ocurre.
+```batch
+FOR flight in flights2
+  FILTER TO_NUMBER(flight.day) > 15 AND flight.MONTH == "1"
+  RETURN flight
+```
+Observando el plan de ejecución, podemos ver como el indice que se utiliza es el creado sobre el campo mes, ya que este tipo de indices al ser no ordenados solo sirven para busquedas exactas y no para rangos. 
