@@ -152,6 +152,35 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
    ```
      $ /usr/local/Cellar/arangodb/<VERSION>/bin/arangosh
    ```
+   
+
+Para lanzar una instancia de Arango una vez que lo tengamos instalado deberemos ejecutar el siguiente comando
+
+```batch
+/usr/local/sbin/arangod &
+```
+
+Si prefirieramos llevar a cabo la consultas y operaciones que realicemos a través de la interfaz web, deberemos lanzar el siguiente comando, el cual nos permitirá acceder a la dirección *localhost:8529* y obtendremos una página donde introduciremos el usuario root sin contraseña para poder empezar a trabajar.
+
+```batch
+arangosh
+```
+
+En caso de querer parar la instancia lanzada de Arangodb, únicamente deberemos parar el proceso, para esto ejecutaremos el siguiente comando
+
+```batch
+sudo brew services stop arangodb
+
+```
+
+o en su defecto
+
+```batch
+brew services stop arangodb
+
+```
+     
+Se podrá encontrar más información en la siguiente url https://www.arangodb.com/docs/stable/installation-mac-osx.html
 
 ## Windows 
 
