@@ -12,9 +12,9 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener instalad
 - Windows
   Para realizar la instalación de ArangoDB en Windows se necesita descargar el Paquete NSIS que contiene dos archivos.
 
-    -Servidor 3.7.5
+      -Servidor 3.7.5
 
-    -Herramientas cliente 3.7.5
+      -Herramientas cliente 3.7.5
 
     Si necesitas más información sobre las actualizaciones del paquete podras consultarlo en la siguiente url: https://www.arangodb.com/download-major/windows/ 
     
