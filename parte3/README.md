@@ -217,6 +217,16 @@ FOR airport IN airports
   }  
 ```
 
+```batch
+FOR airport IN airports
+  COLLECT country = airport.iso_country WITH COUNT INT length
+  SORT length DESC
+  RETURN {
+    "country":country,
+    "airportsInCountry":length
+  }  
+```
+
 
 #### IX.- Comparación del rendimiento de una consulta con la creación de dos indices
 
