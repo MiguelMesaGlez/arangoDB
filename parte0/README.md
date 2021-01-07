@@ -18,6 +18,5 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener instalad
 
     Si necesitas más información sobre las actualizaciones del paquete podras consultarlo en la siguiente url: https://www.arangodb.com/download-major/windows/ 
     
-  
 - Linux
   Explicación
