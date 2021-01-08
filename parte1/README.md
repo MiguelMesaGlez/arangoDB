@@ -143,7 +143,7 @@ Si prefirieramos llevar a cabo la consultas y operaciones que realicemos a trav√
 
 ```batch
 arangosh
-
+```
 
 En caso de querer parar la instancia lanzada de Arangodb, √∫nicamente deberemos parar el proceso, para esto ejecutaremos el siguiente comando
 
