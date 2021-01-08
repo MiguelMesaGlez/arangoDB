@@ -40,6 +40,8 @@ Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie
       arangosh --server.endpoint tcp://127.0.0.1:8529 --server.username userArango --server.database Airports
     ```
 
+<br>
+
 En segundo lugar realizaremos una serie de consultas para probar la potencia que puede llegar a alcanzar ArangoDB, asi como para conocer el tipo de consultas que podemos realizar con los datos seleccionados.
 
 ### Índice de consultas AQL
