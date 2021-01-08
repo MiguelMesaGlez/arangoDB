@@ -102,6 +102,7 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
   ```
 
 <br>
+
 #### I.- Búsqueda de los aeropuertos de un país
 
 ```batch 
@@ -126,7 +127,7 @@ FOR c IN Travellers
 ```
 > Modificamos el valor de un atributo, de esta manera no es necesario modificar todos los documentos que contienen dicho atributo.
 ```batch
-UPDATE "Y" WITH { en: "efficient" } IN Traits
+UPDATE "Y" WITH {en: "Young Card" , es: "Carnet Joven" } IN Traits
 ```
 > Mostramos nuevamente los viajeros y sus atributos para observar el cambio.
 ```batch
