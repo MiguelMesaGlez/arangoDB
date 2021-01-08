@@ -135,13 +135,13 @@ FOR c IN Travellers
   RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
 ```
 
-- Modificar un trait con filtrado
+- Mostrar un trait con filtrado
 ```batch
     FOR traveller IN Travellers
         FILTER traveller.age < 18
         LET traveller_full = MERGE (traveller, 
                 {
-                traits: DOCUMENT("traits", traveller.traits)[*].en
+                traits: DOCUMENT("Traits", traveller.traits)[*].es
                 }
             )
         RETURN {
@@ -174,7 +174,8 @@ FOR c IN Travellers
             SORT DISTANCE(traveller.latitude_deg, traveller.longitude_deg, airport.latitude_deg, airport.longitude_deg)
             LIMIT 3
             RETURN {
-                name:t.name,
+                name:traveller.name,
+                airport: airport.name,
                 travellerLat:traveller.latitude_deg,
                 travellerLon:traveller.longitude_deg,
                 airportLat:airport.latitude_deg,
@@ -209,7 +210,7 @@ FOR traveller in Travellers
         FOR airport IN Airports
             LET distance = DISTANCE(airport.coordinates[0], airport.coordinates[1], traveller.coordinates[0], traveller.coordinates[1])
             SORT distance
-            FILTER distance < 2000 * 1000
+            FILTER distance < 200 * 1000
 
             RETURN {
             viajero: traveller.name,
@@ -231,7 +232,7 @@ FOR traveller in Travellers
 FOR airport IN Airports
     FILTER airport.iso_country == "ES"
         FOR v, e, p IN 1..1 OUTBOUND 
-            airport flights
+            airport Flights
             RETURN p
 ```
 
@@ -247,7 +248,7 @@ FOR airport IN Airports
 
 ```batch
 FOR airport IN Airports
-  COLLECT country = airport.iso_country WITH COUNT INT length
+  COLLECT country = airport.iso_country WITH COUNT INTO length
   SORT length DESC
   RETURN {
     "country":country,
@@ -260,14 +261,14 @@ FOR airport IN Airports
 
 Lo primero que haremos sera ejecutar la consulta y comprobar tanto el tiempo como el plan de ejecución de esta.
 ```batch
-FOR flight IN Flights
+FOR flight IN Flights2
   FILTER flight.day == "15" AND flight.MONTH == "1"
   RETURN flight
 ```
 
 Después crearemos el primero de los indices que se creará sobre el campo mes. NOTA: los pasos que describiremos a continuación se deben realizar desde la interzar web de ArangoDB
 - Acceder al *tab* colecciones
-- Acceder click a la colección de Flights
+- Acceder click a la colección de Flights2
 - Acceder en el *tab* de *Indexes*
 - Hacer click en el botón con el símbolo de "+"
 - Cambiar el tipo a *Permanent Index*
@@ -279,7 +280,7 @@ Una vez creado el indice podemos volver a lanzar la consulta y comprobar cual ha
 
 Finalmente, vamos a realizar una leve modificiación sobre la consulta y ver que ocurre.
 ```batch
-FOR flight in Flights
+FOR flight in Flights2
   FILTER TO_NUMBER(flight.day) > 15 AND flight.MONTH == "1"
   RETURN flight
 ```
