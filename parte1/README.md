@@ -125,62 +125,60 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
 1. Antes de nada, deberá tener instalado el paquete brew para realizar la instalación, para ello debemos ejecutar el siguiente comando
   
    ```
-     $  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
    Se podrá encontrar más información en la siguiente url https://brew.sh/index_es
 
 2. Para realizar la instalación de ArangoDB en el sistema operativo MacOS deberemos ejecutar el siguiente comando en un terminal del ordenador, y se instalará la última version estable de la misma.                  
 
    ```
-     $  brew install arangodb
+     brew install arangodb
    ```
  
 3. Para realizar la creación de la instancia de ArangoDB en el sistema operativo MacOS deberemos ejecutar el siguiente comando en un terminal del ordenador, y se instalará la última version estable de la misma.                  
 
    ``` 
-     $ /usr/local/Cellar/arangodb/<VERSION>/sbin/arangod &
+     /usr/local/Cellar/arangodb/<VERSION>/sbin/arangod &
    ```  
   
 4. El archivo para modificar la configuración predeterminada de ArangoDB es arango.conf, en el encontraremos detallados los parametros que podremos modificar en caso de ser necesario, accederemos a él mediante el siguiente comando:
   
    ```      
-     $ /usr/local/etc/arangodb3/arangod.conf
+     /usr/local/etc/arangodb3/arangod.conf
    ```
   
 5. Por otra parte, para finalizar con la instación, en caso de querer ejecutar arango desde el termina, deberemos instalar el Shell, para lo cual ejecutaremos la siguiente línea:
   
    ```
-     $ /usr/local/Cellar/arangodb/<VERSION>/bin/arangosh
+     /usr/local/Cellar/arangodb/<VERSION>/bin/arangosh
    ```
    
 
-Para lanzar una instancia de Arango una vez que lo tengamos instalado deberemos ejecutar el siguiente comando
+ 6. Para lanzar una instancia de Arango una vez que lo tengamos instalado deberemos ejecutar el siguiente comando
 
-```batch
-/usr/local/sbin/arangod &
-```
+    ``` 
+      /usr/local/sbin/arangod &
+    ```
 
-Si prefirieramos llevar a cabo la consultas y operaciones que realicemos a través de la interfaz web, deberemos lanzar el siguiente comando, el cual nos permitirá acceder a la dirección *localhost:8529* y obtendremos una página donde introduciremos el usuario root sin contraseña para poder empezar a trabajar.
+    Si prefirieramos llevar a cabo la consultas y operaciones que realicemos a través de la interfaz web, deberemos lanzar el siguiente comando,   el cual nos permitirá acceder a la dirección *localhost:8529* y obtendremos una página donde introduciremos el usuario root sin contraseña para poder empezar a trabajar.
 
-```batch
-arangosh
-```
+    ``` 
+        arangosh
+    ```
 
-En caso de querer parar la instancia lanzada de Arangodb, únicamente deberemos parar el proceso, para esto ejecutaremos el siguiente comando
+    En caso de querer parar la instancia lanzada de Arangodb, únicamente deberemos parar el proceso, para esto ejecutaremos el siguiente comando
 
-```batch
-sudo brew services stop arangodb
+    ``` 
+        sudo brew services stop arangodb
+    ```
 
-```
-
-o en su defecto
-
-```batch
-brew services stop arangodb
-
-```
+    o en su defecto
+    
+    ``` 
+        brew services stop arangodb
+    ```
      
-Se podrá encontrar más información en la siguiente url https://www.arangodb.com/docs/stable/installation-mac-osx.html
+    Se podrá encontrar más información en la siguiente url https://www.arangodb.com/docs/stable/installation-mac-osx.html
 
 ## Windows 
 
