@@ -4,6 +4,10 @@
 
 Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie de operaciones necesarias para llevar a cabo la posterior realización de consultas en nuestra base de datos, para ello deberemos realizar lo siguiente:
 
+  - Lanzaremos ArangoDB mediante la consola
+  ```batch
+  > /usr/local/sbin/arangod &
+  ```
   - Ingresaremos a *localhost:8529* como **root** (sin contraseña)
   ```batch
   > arangosh
