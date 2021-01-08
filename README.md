@@ -1,12 +1,5 @@
 # ArangoDB 🥑
-Este repositorio contiene la información relativa a la práctica a realizar con ArangoDB para la asignatura de "Sistemas de gestión de datos e infraestructura" para el máster de Big Data Analytics en la Universidad Europea de Madrid. 
-
-  
-## Parte 0: Pre-requisitos 📋
-En esta parte inicial se incluyen algúnos requisitos necesarios a tener en cuenta antes de realizar la instalacion de ArangoDB en función del sistema operativo que se utilice.
-  - Prerequisitos de instalación en MacOS 
-  - Prerequisitos de instalación en Linux
-  - Prerequisitos de instalación en Windows
+Este repositorio contiene la información relativa a la práctica a realizar con ArangoDB para la asignatura de "Sistemas de gestión de datos e infraestructura" para el máster de Big Data Analytics en la Universidad Europea de Madrid.
 
 ## Parte I: Instalación 🔧
 En esta parte se encuentran agrupados los pasos necesarios para llevar a cabo la instalación y configuración de ArangoDB en función del sistema operativo que se utilice.
