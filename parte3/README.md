@@ -6,11 +6,11 @@ Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie
 
   - Lanzaremos ArangoDB mediante la consola
   ```batch
-  > /usr/local/sbin/arangod &
+  /usr/local/sbin/arangod &
   ```
   - Ingresaremos a *localhost:8529* como **root** (sin contraseña)
   ```batch
-  > arangosh
+  arangosh
   ```
   - Creación de base de datos **Airports**
   ```batch
@@ -40,20 +40,19 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
 
 
 ### Índice de consultas AQL
+0. Operaciones **CRUD** en colecciones
+1. Operación de **FILTRADO** en colecciones
+2. Operación **MERGE** en colecciones
+3. Aplicar **FUNCIONES** en las colecciones
+4. Aplicar **OPERACIONES** en las colecciones
+5. Creación de un índice tipo: **Geoespacial**
+6. Aplicar **GRAFOS** en las colecciones
+7. Comparación del **RENDIMIENTO** 
 
-0. Operaciones CRUD básicas
-1. Búsqueda de los aeropuertos de un país
-2. Búsqueda del país de un aeropuerto
-3. Modificación de los traits con y sin filtrado
-4. Conocer situación geográfica de los aeropuertos
-5. Conocer aeropuertos más cercanos a una persona
-6. Creación índice Geoespacial
-7. Conocer aeropuertos más cercanos a una persona por rango
-8. Vuelos salientes de un país en concreto
-
+<br> 
 
 # Consultas AQL
-#### 0.- Operaciones CRUD básicas
+#### 0.- Operaciones CRUD en colecciones
 
   - Create
   ```batch
@@ -103,23 +102,28 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
 
 <br>
 
-#### I.- Búsqueda de los aeropuertos de un país
+#### I.- Operación de FILTRADO en colecciones
+
+Realizar una consulta en la cual se establece un filtro en el que podemos clasificar por el pais de situación del aeropuerto.
 
 ```batch 
   FOR airport IN Airports
       FILTER airport.iso_country == "ES"
       RETURN airport.name
  ```
-
-#### II.- Búsqueda del país de un aeropuerto
+Se puede filtrar por cualquier tipo de campo que pertenezca a la colección, en este caso se ha optado por filtrar según el nombre del un aeropuerto.
 
 ```batch 
   FOR airport IN Airports
       FILTER airport.name == "London Luton Airport"
       RETURN airport.iso_country
  ```
+ 
+<br>
 
-#### III.- Modificación de los traits con y sin filtrado
+#### II.- Operación MERGE en colecciones
+En este caso podemos optar por dos tipos de merge entre las colecciones, puede ser uno con ul filtro, en el cual añadimos el campo que más nos interese para obtener los resultados requerido, o por otra parte sin ningún tipo de filtro.
+
 - Modificar un trait sin filtrado
 ```batch
 FOR c IN Travellers
@@ -151,8 +155,11 @@ FOR c IN Travellers
         }
 ```
 
+<br>
 
-#### IV.- Conocer situación geográfica de los aeropuertos
+#### III.- Aplicar FUNCIONES en las colecciones
+En este caso aplicamos dos funciones diferentes que nos aporta ArangoDB las cuales son: *Geo_Point* y *Distance*, estas resultan bastante útiles cuando se quiere
+conocer situación geográfica de los aeropuertos.
 
 ```batch
     FOR traveller IN Travellers
@@ -163,9 +170,10 @@ FOR c IN Travellers
             RETURN GEO_POINT(airport.longitude_deg, airport.latitude_deg)
 
 ```
+<br>
 
-
-#### V.- Conocer aeropuertos más cercanos a una persona
+#### IV.- Aplicar OPERACIONES en las colecciones
+Podemos aplicar otro tipo de operaciones, como pueden ser *Limit* y *Sort* las cuales nos permiten realizar variaciones sobre el resultado de nuestra consulta, esto resulta útil a la hora de conocer aeropuertos más cercanos a una persona, donde podemos establecer un limite de visionado en la salida.
 
 ```batch
     FOR traveller IN Travellers
@@ -181,62 +189,9 @@ FOR c IN Travellers
                 airportLat:airport.latitude_deg,
                 airportLon:airport.longitude_deg
             }
-
-
 ```
+Otra operación a tener en cuenta puede ser *Collect*, en este caso nos permite realizar la agrupación entre los distintos campos de nuestra colección mediante un campo. También nos permite realizar operaciones de agregación.
 
-
-#### VI.- Creación de un índice tipo: Geoespacial
-
-Para llevar a cabo operaciones de geolocalización, deberemos crear un índice de tipo Geo, para ello, habrá que realizar los siguientes pasos:
-- Acceder al *tab* colecciones
-- Acceder click a la colección de Airports
-- Acceder en el *tab* de *Indexes*
-- Hacer click en el botón con el símbolo de "+"
-- Cambiar el tipo a *Geo Index*
-- Escribir *coordinates* en el campo Fields
-- Escribir el nombre que deseemos en el campo Nombre
-- Hacer click en crear
-
-En caso de necesitar más información, les recomendamos visitar la siguiente url: 
-
-<img src= "https://github.com/MiguelMesaGlez/arangoDB/blob/demo/ficherosAdicionales/imagenes/GeoJson.png" width = "750">
-
-#### VII.- Conocer aeropuertos más cercanos  a una persona por rango
-
-```batch
-FOR traveller in Travellers 
-    LET coordviajero = [traveller.coordinates[0], traveller.coordinates[1]]
-        FOR airport IN Airports
-            LET distance = DISTANCE(airport.coordinates[0], airport.coordinates[1], traveller.coordinates[0], traveller.coordinates[1])
-            SORT distance
-            FILTER distance < 200 * 1000
-
-            RETURN {
-            viajero: traveller.name,
-            debe_ir_a: airport.name,
-            latitude_airport: airport.coordinates[0],
-            longitude_airport: airport.coordinates[1],
-            latitude_viajero: traveller.coordinates[0],
-            longitude_viajero: traveller.coordinates[1],
-            distance: (distance/1000)
-            }
-
-
-```
-
-
-#### VII.- Vuelos salientes en modo de grafo de un país
-
-```batch
-FOR airport IN Airports
-    FILTER airport.iso_country == "ES"
-        FOR v, e, p IN 1..1 OUTBOUND 
-            airport Flights
-            RETURN p
-```
-
-#### VIII.- Operaciones de agrupación y agregación
 ```batch
 FOR airport IN Airports
   COLLECT country = airport.iso_country INTO groups = airport.name
@@ -256,17 +211,71 @@ FOR airport IN Airports
   }  
 ```
 
+<br>
 
-#### IX.- Comparación del rendimiento de una consulta con la creación de dos indices
+#### V.- Creación de un índice tipo: Geoespacial
 
-Lo primero que haremos sera ejecutar la consulta y comprobar tanto el tiempo como el plan de ejecución de esta.
+Para llevar a cabo operaciones de geolocalización, deberemos crear un índice de tipo Geo, para ello, habrá que realizar los siguientes pasos:
+- Acceder al *tab* colecciones
+- Acceder click a la colección de Airports
+- Acceder en el *tab* de *Indexes*
+- Hacer click en el botón con el símbolo de "+"
+- Cambiar el tipo a *Geo Index*
+- Escribir *coordinates* en el campo Fields
+- Escribir el nombre que deseemos en el campo Nombre
+- Hacer click en crear
+
+<img src= "https://github.com/MiguelMesaGlez/arangoDB/blob/demo/ficherosAdicionales/imagenes/GeoJson.png" width = "750">
+
+Ejemplo práctico del uso de un índice Geoespacial, con el cual buscamos conocer aquellos aeropuertos más cercanos a una persona estableciendo un rango en concreto, el cual puede ser modificado en función de las necesidades.
+
+```batch
+FOR traveller in Travellers 
+    LET coordviajero = [traveller.coordinates[0], traveller.coordinates[1]]
+        FOR airport IN Airports
+            LET distance = DISTANCE(airport.coordinates[0], airport.coordinates[1], traveller.coordinates[0], traveller.coordinates[1])
+            SORT traveller.name, distance
+            FILTER distance < 200 * 1000
+
+            RETURN {
+            viajero: traveller.name,
+            debe_ir_a: airport.name,
+            latitude_airport: airport.coordinates[0],
+            longitude_airport: airport.coordinates[1],
+            latitude_viajero: traveller.coordinates[0],
+            longitude_viajero: traveller.coordinates[1],
+            distance: (distance/1000)
+            }
+```
+
+<br>
+
+
+#### VI.- Aplicar GRAFOS en las colecciones
+ArangoDB presenta una gran utilidad a la hora de realizar grafos con nuestros datos, podemos establecer una serie de atributos que nos permiten devolver los vuelos salientes, de entrada o todos los que se realizan desde de un país. 
+
+```batch
+FOR airport IN Airports
+    FILTER airport.iso_country == "ES"
+        FOR v, e, p IN 1..1 OUTBOUND 
+            airport Flights
+            RETURN p
+```
+
+<br>
+
+#### VII.- Comparación del RENDIMIENTO 
+Mediante una misma consulta sobre una colección dada, se ha experimentado con la creación de diferentes índices, mediante su ejecución se ha llegado a la conclusión de que estos mejoran notablemente el tiempo de ejecución cuando se usan grandes cantidades de datos.
+
+A modo de ejemplo, lo primero que haremos sera ejecutar la consulta y comprobar tanto el tiempo como el plan de ejecución de esta.
 ```batch
 FOR flight IN Flights2
   FILTER flight.day == "15" AND flight.month == "1"
   RETURN flight
 ```
 
-Después crearemos el primero de los indices que se creará sobre el campo mes. NOTA: los pasos que describiremos a continuación se deben realizar desde la interzar web de ArangoDB
+Después crearemos el primero de los indices que se creará sobre el campo mes. NOTA: los pasos que describiremos a continuación se deben realizar desde la interzar web de ArangoDB.
+
 - Acceder al *tab* colecciones
 - Acceder click a la colección de Flights2
 - Acceder en el *tab* de *Indexes*
@@ -279,6 +288,7 @@ Después crearemos el primero de los indices que se creará sobre el campo mes. 
 Una vez creado el indice podemos volver a lanzar la consulta y comprobar cual ha sido la mejoría respecto a la ejecución anterior. Hecho esto podemos pasar a crear el segundo indice. Para ello, solo habrá que repetir los mismos pasas que en el anterior, cambiando la información introducida en el campo Fields por *day,month* y introduciendo un nombre distinto. Tras ejecutar la misma query podremos ver una mayor mejoría.
 
 Finalmente, vamos a realizar una leve modificiación sobre la consulta y ver que ocurre.
+
 ```batch
 FOR flight in Flights2
   FILTER TO_NUMBER(flight.day) > 15 AND flight.month == "1"
