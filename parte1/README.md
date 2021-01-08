@@ -1,8 +1,8 @@
 # Parte 1: Instalación 🔧
 
-Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuenta una serie de factores para realizar la correcta instalación de ArangoDB.
+Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuenta una serie de factores para realizar la correcta instalación de ArangoDB. Se puede acceder a más información y descargar los paquetes necesarios para la instalacion seleccionando el sistema operativo deseado en el siguiente link: https://www.arangodb.com/download-major/ 
 
-## Linux
+## Linux (linea de comando)
 
 1.  Lo primero que vamos a hacer es crear el directorio para instalar arangoDB en /opt.
 
@@ -42,7 +42,7 @@ Durante la instalación aparecerán ciertas preguntas sobre la configuración qu
         <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion3.png" width="750">
      </kbd>
      
-   * Elegir motor de almacenamiento de la base de datos a utilizar. (Este paso no me ha salido)
+   * Elegir motor de almacenamiento de la base de datos a utilizar.
      * auto
      * rocksdb (default)
      * mmfiles
@@ -133,35 +133,33 @@ Para realizar la instalación de ArangoDB en el sistema operativo MacOS deberemo
   $ /usr/local/Cellar/arangodb/<VERSION>/sbin/arangod
 ```
      
-Se podrá encontrar más información en la siguiente url https://www.arangodb.com/docs/stable/installation-mac-osx.html
-
 ## Windows 
 
 * Para realizar la instalación de ArangoDB en Windows se necesita descargar el Paquete NSIS que contiene dos archivos.
 
-    -Servidor 3.7.5
-
-    -Herramientas cliente 3.7.5
-
-    Si necesitas más información sobre las actualizaciones del paquete podras consultarlo en la siguiente url: https://www.arangodb.com/download-major/windows/ 
-    
+    - Servidor 3.7.5
+    - Herramientas cliente 3.7.5
 
 * Al descargar el primer archivo, obtienes una ventanilla para iniciar la instalación del interfaz ArangoDB 3.7.5.
-  <kbd>
-  <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window1.png" width="400" >
-  </kbd>
 
-* La instalación tiene una duración de 2 a 5 minutos y tienes que registrar una contraseña para poder iniciar más adelante y por default, el usuario es root y el programa crea     un acceso directo en tu escritorio de Windows.
-  <kbd>
+<kbd>
+  <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window1.png" width="400" >
+</kbd>
+
+* La instalación tiene una duración de 2 a 5 minutos y tienes que registrar una contraseña para poder iniciar más adelante y por default, el usuario es root y el programa crea un acceso directo en tu escritorio de Windows.
+
+<kbd>
   <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window2.png" width="400" >
-  </kbd>
+</kbd>
 
 * En el segundo archivo obtienes las herramientas clientes de ArangoDB, la cual te abre una ventana azul para seguir con las instrucciones.
-  <kbd>
+
+<kbd>
   <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window3.png" width="400" >
-  </kbd>
+</kbd>
 
 * Una vez instalado, te permite iniciar Arango DB iniciando primero la contraseña que hemos registrado en la instalación.
-  <kbd>
+
+<kbd>
   <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window4.png" width="400" >
-  </kbd>
+</kbd>
