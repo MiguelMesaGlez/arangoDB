@@ -59,6 +59,8 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
 # Consultas AQL
 #### 0.- Operaciones CRUD en colecciones
 
+Comenzaremos realizando unas consultas básicas que nos permitirán familiarizarnos con la forma de realizar consultas con AQL.
+
   - Create
     ``` 
       INSERT {  
