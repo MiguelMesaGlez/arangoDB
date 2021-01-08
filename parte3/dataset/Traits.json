@@ -1,0 +1,15 @@
+[
+    { "_key": "Y", "en": "Young", "es": "Joven"},
+    { "_key": "C", "en": "Child", "es": "Niño"},
+    { "_key": "O", "en": "Old", "es": "Jubilado"},
+    { "_key": "PE", "en": "PremiumEconomic", "es": "Turista Premium"},
+    { "_key": "E", "en": "Economic", "es": "Turista"},
+    { "_key": "B", "en": "Bussines", "es": "Negocio"},
+    { "_key": "FC", "en": "FirstClass", "es": "Primera Clase"},
+    { "_key": "U", "en": "Usual", "es": "Frecuente"},
+    { "_key": "UU", "en": "Unusual", "es": "Poco Frecuente"},
+    { "_key": "GC", "en": "Gold Card", "es": "Tarjeta Oro"},
+    { "_key": "PC", "en": "Platinum Card", "es": "Tarjeta Plata"},
+    { "_key": "S", "en": "Suitcase", "es": "Equipaje"},
+    { "_key": "HL", "en": "Hand Luggage", "es": "Equipaje de mano"}
+]

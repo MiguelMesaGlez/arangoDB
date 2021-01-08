@@ -1,0 +1,746 @@
+[
+  {
+    "_to": "Airports/OlenyaAirBase",
+    "_from": "Airports/Nice-CotedAzurAirport"
+  },
+  {
+    "_to": "Airports/Nice-CotedAzurAirport",
+    "_from": "Airports/NewcastleAirport"
+  },
+  {
+    "_to": "Airports/ManchesterAirport",
+    "_from": "Airports/LondonCityAirport"
+  },
+  {
+    "_to": "Airports/LjubljanaJozePucnikAirport",
+    "_from": "Airports/LeedsBradfordAirport"
+  },
+  {
+    "_to": "Airports/ExeterInternationalAirport",
+    "_from": "Airports/CiampinoAirport"
+  },
+  {
+    "_to": "Airports/FaroAirport",
+    "_from": "Airports/EastMidlandsAirport"
+  },
+  {
+    "_to": "Airports/CopenhagenKastrupAirport",
+    "_from": "Airports/SimferopolInternationalAirport"
+  },
+  {
+    "_to": "Airports/RamsteinAirBase",
+    "_from": "Airports/RAFFairford"
+  },
+  {
+    "_to": "Airports/PulkovoAirport",
+    "_from": "Airports/Torino-CaselleInternationalAirport"
+  },
+  {
+    "_to": "Airports/UfaInternationalAirport",
+    "_from": "Airports/ZagrebAirport"
+  },
+  {
+    "_to": "Airports/MalmoSturupAirport",
+    "_from": "Airports/OsloGardermoenAirport"
+  },
+  {
+    "_to": "Airports/Stockholm-ArlandaAirport",
+    "_from": "Airports/LiverpoolJohnLennonAirport"
+  },
+  {
+    "_to": "Airports/Gothenburg-LandvetterAirport",
+    "_from": "Airports/LondonHeathrowAirport"
+  },
+  {
+    "_to": "Airports/Stockholm-ArlandaAirport",
+    "_from": "Airports/BournemouthAirport"
+  },
+  {
+    "_to": "Airports/Bordeaux-MerignacAirport",
+    "_from": "Airports/OsloGardermoenAirport"
+  },
+  {
+    "_to": "Airports/Venezia-Tessera-MarcoPoloAirport",
+    "_from": "Airports/FrankfurtamMainInternationalAirport"
+  },
+  {
+    "_to": "Airports/CharlesdeGaulleInternationalAirport",
+    "_from": "Airports/LondonHeathrowAirport"
+  },
+  {
+    "_to": "Airports/MadridBarajasInternationalAirport",
+    "_from": "Airports/LondonHeathrowAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/BrusselsAirport"
+  },
+  {
+    "_to": "Airports/Venezia-Tessera-MarcoPoloAirport",
+    "_from": "Airports/FrankfurtamMainInternationalAirport"
+  },
+  {
+    "_to": "Airports/CharlesdeGaulleInternationalAirport",
+    "_from": "Airports/BrusselsAirport"
+  },
+  {
+    "_to": "Airports/MadridBarajasInternationalAirport",
+    "_from": "Airports/SantiagodeCompostelaAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/MadridBarajasInternationalAirport"
+  },
+  {
+    "_to": "Airports/BarcelonaInternationalAirport",
+    "_from": "Airports/FrankfurtamMainInternationalAirport"
+  },
+  {
+    "_to": "Airports/TegelInternationalAirport",
+    "_from": "Airports/SantiagodeCompostelaAirport"
+  },
+  {
+    "_to": "Airports/MadridBarajasInternationalAirport",
+    "_from": "Airports/MalagaAirport"
+  },
+  {
+    "_to": "Airports/RamsteinAirBase",
+    "_from": "Airports/StuttgartAirport"
+  },
+  {
+    "_to": "Airports/BCologneBonnAirport",
+    "_from": "Airports/FrankfurtamMainInternationalAirport"
+  },
+  {
+    "_to": "Airports/TegelInternationalAirport",
+    "_from": "Airports/MunsterOsnabruckAirport"
+  },
+  {
+    "_to": "Airports/BBremenAirport",
+    "_from": "Airports/RamsteinAirBase"
+  },
+  {
+    "_to": "Airports/MunsterOsnabruckAirport",
+    "_from": "Airports/MunichInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/DresdenAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/FrankfurtamMainInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/MunsterOsnabruckAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/HamburgAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/MunichInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/KeflavikInternationalAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/PristinaInternationalAirport"
+  },
+  {
+    "_to": "Airports/LipetskAirBase",
+    "_from": "Airports/BrusselsAirport"
+  },
+  {
+    "_to": "Airports/ThessalonikiMacedoniaInternationalAirport",
+    "_from": "Airports/LiegeAirport"
+  },
+  {
+    "_to": "Airports/Paris-OrlyAirport",
+    "_from": "Airports/Berlin-SchonefeldInternationalAirport"
+  },
+  {
+    "_to": "Airports/Stockholm-ArlandaAirport",
+    "_from": "Airports/DresdenAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/FrankfurtamMainInternationalAirport"
+  },
+  {
+    "_to": "Airports/GlasgowInternationalAirport",
+    "_from": "Airports/MunsterOsnabruckAirport"
+  },
+  {
+    "_to": "Airports/LjubljanaJozePucnikAirport",
+    "_from": "Airports/HamburgAirport"
+  },
+  {
+    "_to": "Airports/RAFBrizeNorton",
+    "_from": "Airports/CologneBonnAirport"
+  },
+  {
+    "_to": "Airports/CologneBonnAirport",
+    "_from": "Airports/DusseldorfInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-TegelInternationalAirport",
+    "_from": "Airports/MunichInternationalAirport"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/NurembergAirport"
+  },
+  {
+    "_to": "Airports/AtaturkInternationalAirport",
+    "_from": "Airports/LeipzigHalleAirport"
+  },
+  {
+    "_to": "Airports/AtaturkInternationalAirport",
+    "_from": "Airports/StuttgartAirport"
+  },
+  {
+    "_to": "Airports/LondonLutonAirport",
+    "_from": "Airports/Berlin-TegelInternationalAirport"
+  },
+  {
+    "_to": "Airports/AberdeenDyceAirport",
+    "_from": "Airports/HannoverAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/BremenAirport"
+  },
+  {
+    "_to": "Airports/CopenhagenKastrupAirport",
+    "_from": "Airports/DortmundAirport"
+  },
+  {
+    "_to": "Airports/LondonLutonAirport",
+    "_from": "Airports/KarlsruheBaden-BadenAirport"
+  },
+  {
+    "_to": "Airports/LondonLutonAirport",
+    "_from": "Airports/TallinnAirport"
+  },
+  {
+    "_to": "Airports/LondonLutonAirport",
+    "_from": "Airports/HelsinkiVantaaAirport"
+  },
+  {
+    "_to": "Airports/SarajevoInternationalAirport",
+    "_from": "Airports/BelfastInternationalAirport"
+  },
+  {
+    "_to": "Airports/AtaturkInternationalAirport",
+    "_from": "Airports/GeorgeBestBelfastCityAirport"
+  },
+  {
+    "_to": "Airports/DresdenAirport",
+    "_from": "Airports/BirminghamInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/ManchesterAirport"
+  },
+  {
+    "_to": "Airports/AberdeenDyceAirport",
+    "_from": "Airports/RobinHoodDoncasterSheffieldAirport"
+  },
+  {
+    "_to": "Airports/GranCanariaAirport",
+    "_from": "Airports/CardiffInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/BristolInternationalAirport"
+  },
+  {
+    "_to": "Airports/AtaturkInternationalAirport",
+    "_from": "Airports/LiverpoolJohnLennonAirport"
+  },
+  {
+    "_to": "Airports/SouthamptonAirport",
+    "_from": "Airports/LondonLutonAirport"
+  },
+  {
+    "_to": "Airports/Berlin-TegelInternationalAirport",
+    "_from": "Airports/BournemouthAirport"
+  },
+  {
+    "_to": "Airports/CologneBonnAirport",
+    "_from": "Airports/SouthamptonAirport"
+  },
+  {
+    "_to": "Airports/ThessalonikiMacedoniaInternationalAirport",
+    "_from": "Airports/LondonGatwickAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/LondonCityAirport"
+  },
+  {
+    "_to": "Airports/Paris-OrlyAirport",
+    "_from": "Airports/LondonHeathrowAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/LeedsBradfordAirport"
+  },
+  {
+    "_to": "Airports/MalmoSturupAirport",
+    "_from": "Airports/NewcastleAirport"
+  },
+  {
+    "_to": "Airports/CopenhagenKastrupAirport",
+    "_from": "Airports/EastMidlandsAirport"
+  },
+  {
+    "_to": "Airports/AalborgAirport",
+    "_from": "Airports/AberdeenDyceAirport"
+  },
+  {
+    "_to": "Airports/GranCanariaAirport",
+    "_from": "Airports/GlasgowInternationalAirport"
+  },
+  {
+    "_to": "Airports/SantiagodeCompostelaAirport",
+    "_from": "Airports/EdinburghAirport"
+  },
+  {
+    "_to": "Airports/SarajevoInternationalAirport",
+    "_from": "Airports/LondonStanstedAirport"
+  },
+  {
+    "_to": "Airports/SantiagodeCompostelaAirport",
+    "_from": "Airports/ExeterInternationalAirport"
+  },
+  {
+    "_to": "Airports/DonetskInternationalAirport",
+    "_from": "Airports/RAFLakenheath"
+  },
+  {
+    "_to": "Airports/LeipzigHalleAirport",
+    "_from": "Airports/RAFMildenhall"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/RAFFairford"
+  },
+  {
+    "_to": "Airports/DusseldorfInternationalAirport",
+    "_from": "Airports/RAFBrizeNorton"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/AmsterdamAirportSchiphol"
+  },
+  {
+    "_to": "Airports/Brive-LaRocheAirport",
+    "_from": "Airports/MaastrichtAachenAirport"
+  },
+  {
+    "_to": "Airports/Berlin-TegelInternationalAirport",
+    "_from": "Airports/EindhovenAirport"
+  },
+  {
+    "_to": "Airports/Brive-LaRocheAirport",
+    "_from": "Airports/CorkAirport"
+  },
+  {
+    "_to": "Airports/SantiagodeCompostelaAirport",
+    "_from": "Airports/DublinAirport"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/ShannonAirport"
+  },
+  {
+    "_to": "Airports/SantiagodeCompostelaAirport",
+    "_from": "Airports/BillundAirport"
+  },
+  {
+    "_to": "Airports/GranCanariaAirport",
+    "_from": "Airports/CopenhagenKastrupAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/AalborgAirport"
+  },
+  {
+    "_to": "Airports/LuleaAirport",
+    "_from": "Airports/Luxembourg-FindelInternationalAirport"
+  },
+  {
+    "_to": "Airports/SouthamptonAirport",
+    "_from": "Airports/BodoAirport"
+  },
+  {
+    "_to": "Airports/VilniusInternationalAirport",
+    "_from": "Airports/BergenAirport,Flesland"
+  },
+  {
+    "_to": "Airports/DresdenAirport",
+    "_from": "Airports/OsloGardermoenAirport"
+  },
+  {
+    "_to": "Airports/SarajevoInternationalAirport",
+    "_from": "Airports/TromsoAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/TrondheimAirport,Vaernes"
+  },
+  {
+    "_to": "Airports/SantiagodeCompostelaAirport",
+    "_from": "Airports/StavangerAirport,Sola"
+  },
+  {
+    "_to": "Airports/TromsoAirport",
+    "_from": "Airports/GdanskLechWalesaAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/JohnPaulIIInternationalAirportKrakow-BaliceAirport"
+  },
+  {
+    "_to": "Airports/Berlin-TegelInternationalAirport",
+    "_from": "Airports/WarsawChopinAirport"
+  },
+  {
+    "_to": "Airports/AtaturkInternationalAirport",
+    "_from": "Airports/Gothenburg-LandvetterAirport"
+  },
+  {
+    "_to": "Airports/BremenAirport",
+    "_from": "Airports/MalmoSturupAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/LuleaAirport"
+  },
+  {
+    "_to": "Airports/MinskInternationalAirport",
+    "_from": "Airports/Stockholm-ArlandaAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/RamsteinAirBase"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/RigaInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/VilniusInternationalAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/GranCanariaAirport"
+  },
+  {
+    "_to": "Airports/UfaInternationalAirport",
+    "_from": "Airports/TenerifeSouthAirport"
+  },
+  {
+    "_to": "Airports/ThessalonikiMacedoniaInternationalAirport",
+    "_from": "Airports/TenerifeNorteAirport"
+  },
+  {
+    "_to": "Airports/agliari-ElmasAirport",
+    "_from": "Airports/TiranaInternationalAirportMotherTeresa"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/BurgasAirport"
+  },
+  {
+    "_to": "Airports/Nice-CotedAzurAirport",
+    "_from": "Airports/PlovdivInternationalAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/SofiaAirport"
+  },
+  {
+    "_to": "Airports/Brive-LaRocheAirport",
+    "_from": "Airports/VarnaAirport"
+  },
+  {
+    "_to": "Airports/SofiaAirport",
+    "_from": "Airports/ZagrebAirport"
+  },
+  {
+    "_to": "Airports/HamburgAirport",
+    "_from": "Airports/AlicanteInternationalAirport"
+  },
+  {
+    "_to": "Airports/BudapestFerihegyInternationalAirport",
+    "_from": "Airports/BarcelonaInternationalAirport"
+  },
+  {
+    "_to": "Airports/ZagrebAirport",
+    "_from": "Airports/MadridBarajasInternationalAirport"
+  },
+  {
+    "_to": "Airports/BarcelonaInternationalAirport",
+    "_from": "Airports/MalagaAirport"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/PalmaDeMallorcaAirport"
+  },
+  {
+    "_to": "Airports/RuzyneInternationalAirport",
+    "_from": "Airports/SantiagodeCompostelaAirport"
+  },
+  {
+    "_to": "Airports/SantiagodeCompostelaAirport",
+    "_from": "Airports/Bordeaux-MerignacAirport"
+  },
+  {
+    "_to": "Airports/MalpensaInternationalAirport",
+    "_from": "Airports/Toulouse-BlagnacAirport"
+  },
+  {
+    "_to": "Airports/AlicanteInternationalAirport",
+    "_from": "Airports/Brive-LaRocheAirport"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/MarseilleProvenceAirport"
+  },
+  {
+    "_to": "Airports/UfaInternationalAirport",
+    "_from": "Airports/Nice-CotedAzurAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/AvordAirBase"
+  },
+  {
+    "_to": "Airports/Luxembourg-FindelInternationalAirport",
+    "_from": "Airports/Tours-Val-de-LoireAirport"
+  },
+  {
+    "_to": "Airports/LondonCityAirport",
+    "_from": "Airports/CharlesdeGaulleInternationalAirport"
+  },
+  {
+    "_to": "Airports/AtaturkInternationalAirport",
+    "_from": "Airports/Paris-OrlyAirport"
+  },
+  {
+    "_to": "Airports/AlicanteInternationalAirport",
+    "_from": "Airports/EleftheriosVenizelosInternationalAirport"
+  },
+  {
+    "_to": "Airports/ThessalonikiMacedoniaInternationalAirport",
+    "_from": "Airports/HeraklionInternationalNikosKazantzakisAirport"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/ThessalonikiMacedoniaInternationalAirport"
+  },
+  {
+    "_to": "Airports/DresdenAirport",
+    "_from": "Airports/BudapestFerihegyInternationalAirport"
+  },
+  {
+    "_to": "Airports/CopenhagenKastrupAirport",
+    "_from": "Airports/Bari-PaleseInternationalAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/Catania-FontanarossaAirport"
+  },
+  {
+    "_to": "Airports/OdessaInternationalAirport",
+    "_from": "Airports/Palermo-PuntaRaisiAirport"
+  },
+  {
+    "_to": "Airports/SofiaAirport",
+    "_from": "Airports/Cagliari-ElmasAirport"
+  },
+  {
+    "_to": "Airports/ZagrebAirport",
+    "_from": "Airports/MalpensaInternationalAirport"
+  },
+  {
+    "_to": "Airports/ChkalovskiyAirport",
+    "_from": "Airports/Bergamo-OrioAlSerioAirport"
+  },
+  {
+    "_to": "Airports/BurgasAirport",
+    "_from": "Airports/Torino-CaselleInternationalAirport"
+  },
+  {
+    "_to": "Airports/BarcelonaInternationalAirport",
+    "_from": "Airports/Genova-SestriCristoforoColomboAirport"
+  },
+  {
+    "_to": "Airports/AlicanteInternationalAirport",
+    "_from": "Airports/LinateAirport"
+  },
+  {
+    "_to": "Airports/LondonCityAirport",
+    "_from": "Airports/Bologna-BorgoPanigaleAirport"
+  },
+  {
+    "_to": "Airports/DonetskInternationalAirport",
+    "_from": "Airports/Treviso-SantAngeloAirport"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/Verona-VillafrancaAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/Venezia-Tessera-MarcoPoloAirport"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/CiampinoAirport"
+  },
+  {
+    "_to": "Airports/MinskInternationalAirport",
+    "_from": "Airports/LeonardoDaVinciInternationalAirport"
+  },
+  {
+    "_to": "Airports/AtaturkInternationalAirport",
+    "_from": "Airports/Napoli-CapodichinoInternationalAirport"
+  },
+  {
+    "_to": "Airports/EleftheriosVenizelosInternationalAirport",
+    "_from": "Airports/Pisa-SanGiusto-GalileoGalileiInternationalAirport"
+  },
+  {
+    "_to": "Airports/Luxembourg-FindelInternationalAirport",
+    "_from": "Airports/LjubljanaJozePucnikAirport"
+  },
+  {
+    "_to": "Airports/BarcelonaInternationalAirport",
+    "_from": "Airports/RuzyneInternationalAirport"
+  },
+  {
+    "_to": "Airports/RuzyneInternationalAirport",
+    "_from": "Airports/LuqaAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/ViennaInternationalAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/FaroAirport"
+  },
+  {
+    "_to": "Airports/ZagrebAirport",
+    "_from": "Airports/FranciscodeSaCarneiroAirport"
+  },
+  {
+    "_to": "Airports/ThessalonikiMacedoniaInternationalAirport",
+    "_from": "Airports/LisbonPortelaAirport"
+  },
+  {
+    "_to": "Airports/BrusselsAirport",
+    "_from": "Airports/SarajevoInternationalAirport"
+  },
+  {
+    "_to": "Airports/SimferopolInternationalAirport",
+    "_from": "Airports/HenriCoandaInternationalAirport"
+  },
+  {
+    "_to": "Airports/Paris-OrlyAirport",
+    "_from": "Airports/GenevaCointrinInternationalAirport"
+  },
+  {
+    "_to": "Airports/tockholm-ArlandaAirport",
+    "_from": "Airports/ZurichAirport"
+  },
+  {
+    "_to": "Airports/RuzyneInternationalAirport",
+    "_from": "Airports/AtaturkInternationalAirport"
+  },
+  {
+    "_to": "Airports/BudapestFerihegyInternationalAirport",
+    "_from": "Airports/BelgradeNikolaTeslaAirport"
+  },
+  {
+    "_to": "Airports/HenriCoandaInternationalAirport",
+    "_from": "Airports/PodgoricaAirport"
+  },
+  {
+    "_to": "Airports/HenriCoandaInternationalAirport",
+    "_from": "Airports/M-R-StefanikAirport"
+  },
+  {
+    "_to": "Airports/BodoAirport",
+    "_from": "Airports/LipetskAirBase"
+  },
+  {
+    "_to": "Airports/BudapestFerihegyInternationalAirport",
+    "_from": "Airports/OlenyaAirBase"
+  },
+  {
+    "_to": "Airports/CopenhagenKastrupAirport",
+    "_from": "Airports/BoryspilInternationalAirport"
+  },
+  {
+    "_to": "Airports/DresdenAirport",
+    "_from": "Airports/DonetskInternationalAirport"
+  },
+  {
+    "_to": "Airports/Toulouse-BlagnacAirport",
+    "_from": "Airports/SimferopolInternationalAirport"
+  },
+  {
+    "_to": "Airports/AtaturkInternationalAirport",
+    "_from": "Airports/KharkivInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/OdessaInternationalAirport"
+  },
+  {
+    "_to": "Airports/DresdenAirport",
+    "_from": "Airports/PulkovoAirport"
+  },
+  {
+    "_to": "Airports/AlicanteInternationalAirport",
+    "_from": "Airports/MinskInternationalAirport"
+  },
+  {
+    "_to": "Airports/CopenhagenKastrupAirport",
+    "_from": "Airports/SochiInternationalAirport"
+  },
+  {
+    "_to": "Airports/Berlin-SchonefeldInternationalAirport",
+    "_from": "Airports/RamenskoyeAirport"
+  },
+  {
+    "_to": "Airports/ThessalonikiMacedoniaInternationalAirport",
+    "_from": "Airports/DomodedovoInternationalAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/SheremetyevoInternationalAirport"
+  },
+  {
+    "_to": "Airports/LipetskAirBase",
+    "_from": "Airports/ChkalovskiyAirport"
+  },
+  {
+    "_to": "Airports/CopenhagenKastrupAirport",
+    "_from": "Airports/UfaInternationalAirport"
+  },
+  {
+    "_to": "Airports/PristinaInternationalAirport",
+    "_from": "Airports/KurumochInternationalAirport"
+  }
+]
