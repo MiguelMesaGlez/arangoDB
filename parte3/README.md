@@ -135,7 +135,7 @@ FOR c IN Travellers
 
 - Modificar un trait con filtrado
 ```batch
-    FOR traveller IN travellers
+    FOR traveller IN Travellers
         FILTER traveller.age < 18
         LET traveller_full = MERGE (traveller, 
                 {
@@ -153,10 +153,10 @@ FOR c IN Travellers
 #### IV.- Conocer situación geográfica de los aeropuertos
 
 ```batch
-    FOR t IN travellers
+    FOR traveller IN Travellers
         LIMIT 1
         FOR airport IN Airports
-            SORT DISTANCE(t.latitude_deg, t.longitude_deg, airport.latitude_deg, airport.longitude_deg)
+            SORT DISTANCE(traveller.latitude_deg, traveller.longitude_deg, airport.latitude_deg, airport.longitude_deg)
             LIMIT 3
             RETURN GEO_POINT(airport.longitude_deg, airport.latitude_deg)
 
@@ -166,17 +166,17 @@ FOR c IN Travellers
 #### V.- Conocer aeropuertos más cercanos a una persona
 
 ```batch
-    FOR t IN travellers
+    FOR traveller IN Travellers
         LIMIT 1
-        FOR a IN airports
-            SORT DISTANCE(t.latitude_deg, t.longitude_deg, a.latitude_deg, a.longitude_deg)
+        FOR airport IN Airports
+            SORT DISTANCE(traveller.latitude_deg, traveller.longitude_deg, airport.latitude_deg, airport.longitude_deg)
             LIMIT 3
             RETURN {
                 name:t.name,
-                travellerLat:t.latitude_deg,
-                travellerLon:t.longitude_deg,
-                airportLat:a.latitude_deg,
-                airportLon:a.longitude_deg
+                travellerLat:traveller.latitude_deg,
+                travellerLon:traveller.longitude_deg,
+                airportLat:airport.latitude_deg,
+                airportLon:airport.longitude_deg
             }
 
 
@@ -202,20 +202,20 @@ En caso de necesitar más información, les recomendamos visitar la siguiente ur
 #### VII.- Conocer aeropuertos más cercanos  a una persona por rango
 
 ```batch
-FOR a in Viajeros 
-    LET coordviajero = [a.coordinates[0], a.coordinates[1]]
-        FOR loc IN Airports
-            LET distance = DISTANCE(loc.coordinates[0], loc.coordinates[1], a.coordinates[0], a.coordinates[1])
+FOR traveller in Travellers 
+    LET coordviajero = [traveller.coordinates[0], traveller.coordinates[1]]
+        FOR airport IN Airports
+            LET distance = DISTANCE(airport.coordinates[0], airport.coordinates[1], traveller.coordinates[0], traveller.coordinates[1])
             SORT distance
             FILTER distance < 2000 * 1000
 
             RETURN {
-            viajero: a.name,
-            debe_ir_a: loc.name,
-            latitude: loc.coordinates[0],
-            longitude: loc.coordinates[1],
-            latitude_viajero: a.coordinates[0],
-            longitude_viajero: a.coordinates[1],
+            viajero: traveller.name,
+            debe_ir_a: airport.name,
+            latitude_airport: airport.coordinates[0],
+            longitude_airport: airport.coordinates[1],
+            latitude_viajero: traveller.coordinates[0],
+            longitude_viajero: traveller.coordinates[1],
             distance: (distance/1000)
             }
 
@@ -226,7 +226,7 @@ FOR a in Viajeros
 #### VII.- Vuelos salientes en modo de grafo de un país
 
 ```batch
-FOR airport IN airports
+FOR airport IN Airports
     FILTER airport.iso_country == "ES"
         FOR v, e, p IN 1..1 OUTBOUND 
             airport flights
@@ -235,7 +235,7 @@ FOR airport IN airports
 
 #### VIII.- Operaciones de agrupación y agregación
 ```batch
-FOR airport IN airports
+FOR airport IN Airports
   COLLECT country = airport.iso_country INTO groups = airport.name
   RETURN {
     "country":country,
@@ -244,7 +244,7 @@ FOR airport IN airports
 ```
 
 ```batch
-FOR airport IN airports
+FOR airport IN Airports
   COLLECT country = airport.iso_country WITH COUNT INT length
   SORT length DESC
   RETURN {
@@ -258,14 +258,14 @@ FOR airport IN airports
 
 Lo primero que haremos sera ejecutar la consulta y comprobar tanto el tiempo como el plan de ejecución de esta.
 ```batch
-FOR flight IN flights2
+FOR flight IN Flights
   FILTER flight.day == "15" AND flight.MONTH == "1"
   RETURN flight
 ```
 
 Después crearemos el primero de los indices que se creará sobre el campo mes. NOTA: los pasos que describiremos a continuación se deben realizar desde la interzar web de ArangoDB
 - Acceder al *tab* colecciones
-- Acceder click a la colección de flights2
+- Acceder click a la colección de Flights
 - Acceder en el *tab* de *Indexes*
 - Hacer click en el botón con el símbolo de "+"
 - Cambiar el tipo a *Permanent Index*
@@ -277,7 +277,7 @@ Una vez creado el indice podemos volver a lanzar la consulta y comprobar cual ha
 
 Finalmente, vamos a realziar una leve modificiación sobre la consulta y ver que ocurre.
 ```batch
-FOR flight in flights2
+FOR flight in Flights
   FILTER TO_NUMBER(flight.day) > 15 AND flight.MONTH == "1"
   RETURN flight
 ```
