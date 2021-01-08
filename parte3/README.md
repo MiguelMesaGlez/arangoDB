@@ -262,7 +262,7 @@ FOR airport IN Airports
 Lo primero que haremos sera ejecutar la consulta y comprobar tanto el tiempo como el plan de ejecución de esta.
 ```batch
 FOR flight IN Flights2
-  FILTER flight.day == "15" AND flight.MONTH == "1"
+  FILTER flight.day == "15" AND flight.month == "1"
   RETURN flight
 ```
 
@@ -271,7 +271,7 @@ Después crearemos el primero de los indices que se creará sobre el campo mes. 
 - Acceder click a la colección de Flights2
 - Acceder en el *tab* de *Indexes*
 - Hacer click en el botón con el símbolo de "+"
-- Cambiar el tipo a *Permanent Index*
+- Cambiar el tipo a *Persistent Index*
 - Escribir *month* en el campo Fields
 - Escribir el nombre que deseemos en el campo Nombre 
 - Hacer click en crear
@@ -281,7 +281,7 @@ Una vez creado el indice podemos volver a lanzar la consulta y comprobar cual ha
 Finalmente, vamos a realizar una leve modificiación sobre la consulta y ver que ocurre.
 ```batch
 FOR flight in Flights2
-  FILTER TO_NUMBER(flight.day) > 15 AND flight.MONTH == "1"
+  FILTER TO_NUMBER(flight.day) > 15 AND flight.month == "1"
   RETURN flight
 ```
 Observando el plan de ejecución, podemos ver como el indice que se utiliza es el creado sobre el campo mes, ya que este tipo de indices al ser no ordenados solo sirven para busquedas exactas y no para rangos. 
