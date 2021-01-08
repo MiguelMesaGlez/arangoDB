@@ -4,15 +4,37 @@
 
 Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie de operaciones necesarias para llevar a cabo la posterior realización de consultas en nuestra base de datos, para ello deberemos realizar lo siguiente:
 
-  - Ingresaremos a *localhost:8529* como **root** 
+  - Ingresaremos a *localhost:8529* como **root** (sin contraseña)
+  ```batch
+  > arangosh
+  ```
   - Creación de base de datos **Airports**
+  ```batch
+  > db._createDatabase('Airports');
+  ```
   - Creación de un nuevo usuario 
     ej. userArango password: mypwd
+  ```batch
+  > const users = require('@arangodb/users');
+  > users.save('userArango', 'mypwd');
+  ```
   - Concesión de permisos sobre este nuevo usuario
+  ```batch
+  users.grantDatabase('userArango', 'Airports', 'rw');
+  ```
   - Exit de la base de datos _system
   - Exit como usuario **root**
+  ```batch
+  ctrl + C
+  ```
   - Ingresamos a *localhost:8529* como **userArango**
+  ```batch
+  arangosh --server.endpoint tcp://127.0.0.1:8529 --server.username userArango --server.database Airports
+  ```
   - Seleccionamos la base de datos **Airports** para trabajar sobre ella
+  ```batch
+  
+  ```
 
 En segundo lugar realizaremos una serie de consultas para probar la potencia que puede llegar a alcanzar ArangoDB, asi como para conocer el tipo de consultas que podemos realizar con los datos seleccionados.
 
