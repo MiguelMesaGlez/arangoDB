@@ -3,15 +3,15 @@ Este repositorio contiene la información relativa a la práctica a realizar con
 
 ## Parte I: Instalación 🔧
 En esta parte se encuentran agrupados los pasos necesarios para llevar a cabo la instalación y configuración de ArangoDB en función del sistema operativo que se utilice.
-  - Requisitos de instalación en MacOS 
-  - Requisitos de instalación en Linux
-  - Requisitos de instalación en Windows
+  - Instalación en Linux 
+  - Instalación en MacOS
+  - Instalación en Windows
   
 ## Parte II: Primeros Pasos 🚀
 En esta parte se incluye como lanzar una instancia de ArangoDB, así como la manera en la que se debe acceder a su API. Por otra parte, se incluirán algunas operaciones con el lenguaje de consulta AQL a modo de ejemplo.
 
 ## Parte III: Demo 🛠️
-En esta sección se incorporan todos los archivos necesarios para realizar una demo en la que se utilice ArangoDB
+En esta sección se incorporan todos los archivos necesarios para realizar una demo en la que se mostrarán distintas funcionalidades de ArangoDB
 
 ## Autores de la práctica Grupo 3✒️
 * **Alejandro Lago Prego** - [Alejandro Lago Prego](https://github.com/elKobe)
