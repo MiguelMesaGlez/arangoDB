@@ -101,7 +101,7 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
         REMOVE airport IN Airports      
   ```
 
-
+<br>
 #### I.- Búsqueda de los aeropuertos de un país
 
 ```batch 
