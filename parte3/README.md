@@ -5,39 +5,42 @@
 Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie de operaciones necesarias para llevar a cabo la posterior realización de consultas en nuestra base de datos, para ello deberemos realizar lo siguiente:
 
   - Lanzaremos ArangoDB mediante la consola
-  ```batch
-  /usr/local/sbin/arangod &
-  ```
+    ``` 
+      /usr/local/sbin/arangod &
+    ```
+    
   - Ingresaremos a *localhost:8529* como **root** (sin contraseña)
-  ```batch
-  arangosh
-  ```
+    ``` 
+      arangosh
+    ```
+    
   - Creación de base de datos **Airports**
-  ```batch
-  > db._createDatabase('Airports');
-  ```
+    ``` 
+      > db._createDatabase('Airports');
+    ```
+    
   - Creación de un nuevo usuario 
     ej. userArango password: mypwd
-  ```batch
-  > const users = require('@arangodb/users');
-  > users.save('userArango', 'mypwd');
-  ```
+    ```batch
+      > const users = require('@arangodb/users');
+      > users.save('userArango', 'mypwd');
+    ```
+    
   - Concesión de permisos sobre este nuevo usuario
-  ```batch
-  users.grantDatabase('userArango', 'Airports', 'rw');
-  ```
+    ``` 
+      users.grantDatabase('userArango', 'Airports', 'rw');
+    ```
   - Exit de la base de datos _system
   - Exit como usuario **root**
-  ```batch
-  ctrl + C
-  ```
+    ``` 
+      ctrl + C
+    ```
   - Ingresamos a *localhost:8529* como **userArango** y seleccionamos la base de datos **Airports** para trabajar sobre ella
-  ```batch
-  arangosh --server.endpoint tcp://127.0.0.1:8529 --server.username userArango --server.database Airports
-  ```
+    ``` 
+      arangosh --server.endpoint tcp://127.0.0.1:8529 --server.username userArango --server.database Airports
+    ```
 
 En segundo lugar realizaremos una serie de consultas para probar la potencia que puede llegar a alcanzar ArangoDB, asi como para conocer el tipo de consultas que podemos realizar con los datos seleccionados.
-
 
 ### Índice de consultas AQL
 0. Operaciones **CRUD** en colecciones
@@ -55,7 +58,7 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
 #### 0.- Operaciones CRUD en colecciones
 
   - Create
-  ```batch
+    ``` 
       INSERT {  
           "_key": "KeflavikInternationalAirport",
           "type": "large_airport",
@@ -69,36 +72,36 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
           "municipality": "Reykjavík",
           "coordinates":[63.9850006103516, -22.605600357055696]
       } INTO Airports
-  ```
+    ```
   - Read
-  ```batch
-    FOR airport IN Airports
-      RETURN airport
-  ```
+    ``` 
+      FOR airport IN Airports
+        RETURN airport
+    ```
 
   - Update
-  ```batch 
-    UPDATE "KeflavikInternationalAirport" 
-      WITH { elevation_ft: 182 
-      } IN Airports
-  ```
+    ```  
+      UPDATE "KeflavikInternationalAirport" 
+        WITH { elevation_ft: 182 
+        } IN Airports
+    ```
   
-  ```batch
-    RETURN DOCUMENT("Airports", "KeflavikInternationalAirport")
-  ```
+    ``` 
+      RETURN DOCUMENT("Airports", "KeflavikInternationalAirport")
+    ```
 
   - Delete
   
-  ```batch 
-    REMOVE "KeflavikInternationalAirport" 
-      IN Airports
-  ```
-  También podemos llevar a cabo la eliminación de todos los documentos de una colección de la siguiente manera:
+    ```  
+      REMOVE "KeflavikInternationalAirport" 
+        IN Airports
+    ```
+    También podemos llevar a cabo la eliminación de todos los documentos de una colección de la siguiente manera:
   
-  ```batch 
-    FOR airport IN Airports
-        REMOVE airport IN Airports      
-  ```
+    ```  
+      FOR airport IN Airports
+         REMOVE airport IN Airports      
+    ```
 
 <br>
 
@@ -106,14 +109,14 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
 
 Realizar una consulta en la cual se establece un filtro en el que podemos clasificar por el pais de situación del aeropuerto.
 
-```batch 
+```  
   FOR airport IN Airports
       FILTER airport.iso_country == "ES"
       RETURN airport.name
  ```
 Se puede filtrar por cualquier tipo de campo que pertenezca a la colección, en este caso se ha optado por filtrar según el nombre del un aeropuerto.
 
-```batch 
+```  
   FOR airport IN Airports
       FILTER airport.name == "London Luton Airport"
       RETURN airport.iso_country
@@ -125,35 +128,35 @@ Se puede filtrar por cualquier tipo de campo que pertenezca a la colección, en 
 En este caso podemos optar por dos tipos de merge entre las colecciones, puede ser uno con ul filtro, en el cual añadimos el campo que más nos interese para obtener los resultados requerido, o por otra parte sin ningún tipo de filtro.
 
 - Modificar un trait sin filtrado
-```batch
-FOR c IN Travellers
-    RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
-```
-> Modificamos el valor de un atributo, de esta manera no es necesario modificar todos los documentos que contienen dicho atributo.
-```batch
-UPDATE "Y" WITH {en: "Young Card" , es: "Carnet Joven" } IN Traits
-```
-> Mostramos nuevamente los viajeros y sus atributos para observar el cambio.
-```batch
-FOR c IN Travellers
-  RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
-```
+  ``` 
+    FOR c IN Travellers
+        RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
+  ```
+  > Modificamos el valor de un atributo, de esta manera no es necesario modificar todos los documentos que contienen dicho atributo.
+    ``` 
+      UPDATE "Y" WITH {en: "Young Card" , es: "Carnet Joven" } IN Traits
+    ```
+  > Mostramos nuevamente los viajeros y sus atributos para observar el cambio.
+    ``` 
+      FOR c IN Travellers
+        RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
+    ```
 
 - Mostrar un trait con filtrado
-```batch
-    FOR traveller IN Travellers
-        FILTER traveller.age < 18
-        LET traveller_full = MERGE (traveller, 
-                {
-                traits: DOCUMENT("Traits", traveller.traits)[*].es
-                }
-            )
-        RETURN {
-            nombre: traveller_full.name,
-            eded:traveller_full.age,
-            caracteristicas:traveller_full.traits
-        }
-```
+  ``` 
+      FOR traveller IN Travellers
+          FILTER traveller.age < 18
+          LET traveller_full = MERGE (traveller, 
+                  {
+                  traits: DOCUMENT("Traits", traveller.traits)[*].es
+                  }
+              )
+          RETURN {
+              nombre: traveller_full.name,
+              eded:traveller_full.age,
+              caracteristicas:traveller_full.traits
+          }
+  ```
 
 <br>
 
@@ -161,7 +164,7 @@ FOR c IN Travellers
 En este caso aplicamos dos funciones diferentes que nos aporta ArangoDB las cuales son: *Geo_Point* y *Distance*, estas resultan bastante útiles cuando se quiere
 conocer situación geográfica de los aeropuertos.
 
-```batch
+``` 
     FOR traveller IN Travellers
         LIMIT 1
         FOR airport IN Airports
@@ -175,7 +178,7 @@ conocer situación geográfica de los aeropuertos.
 #### IV.- Aplicar OPERACIONES en las colecciones
 Podemos aplicar otro tipo de operaciones, como pueden ser *Limit* y *Sort* las cuales nos permiten realizar variaciones sobre el resultado de nuestra consulta, esto resulta útil a la hora de conocer aeropuertos más cercanos a una persona, donde podemos establecer un limite de visionado en la salida.
 
-```batch
+``` 
     FOR traveller IN Travellers
         LIMIT 1
         FOR airport IN Airports
@@ -192,7 +195,7 @@ Podemos aplicar otro tipo de operaciones, como pueden ser *Limit* y *Sort* las c
 ```
 Otra operación a tener en cuenta puede ser *Collect*, en este caso nos permite realizar la agrupación entre los distintos campos de nuestra colección mediante un campo. También nos permite realizar operaciones de agregación.
 
-```batch
+``` 
 FOR airport IN Airports
   COLLECT country = airport.iso_country INTO groups = airport.name
   RETURN {
@@ -201,7 +204,7 @@ FOR airport IN Airports
   }  
 ```
 
-```batch
+``` 
 FOR airport IN Airports
   COLLECT country = airport.iso_country WITH COUNT INTO length
   SORT length DESC
@@ -225,11 +228,11 @@ Para llevar a cabo operaciones de geolocalización, deberemos crear un índice d
 - Escribir el nombre que deseemos en el campo Nombre
 - Hacer click en crear
 
-<img src= "https://github.com/MiguelMesaGlez/arangoDB/blob/demo/ficherosAdicionales/imagenes/GeoJson.png" width = "750">
+<img src= "https://github.com/MiguelMesaGlez/arangoDB/blob/demo/ficherosAdicionales/imagenes/GeoJson.png" width = "600">
 
 Ejemplo práctico del uso de un índice Geoespacial, con el cual buscamos conocer aquellos aeropuertos más cercanos a una persona estableciendo un rango en concreto, el cual puede ser modificado en función de las necesidades.
 
-```batch
+``` 
 FOR traveller in Travellers 
     LET coordviajero = [traveller.coordinates[0], traveller.coordinates[1]]
         FOR airport IN Airports
@@ -254,7 +257,7 @@ FOR traveller in Travellers
 #### VI.- Aplicar GRAFOS en las colecciones
 ArangoDB presenta una gran utilidad a la hora de realizar grafos con nuestros datos, podemos establecer una serie de atributos que nos permiten devolver los vuelos salientes, de entrada o todos los que se realizan desde de un país. 
 
-```batch
+``` 
 FOR airport IN Airports
     FILTER airport.iso_country == "ES"
         FOR v, e, p IN 1..1 OUTBOUND 
@@ -268,7 +271,7 @@ FOR airport IN Airports
 Mediante una misma consulta sobre una colección dada, se ha experimentado con la creación de diferentes índices, mediante su ejecución se ha llegado a la conclusión de que estos mejoran notablemente el tiempo de ejecución cuando se usan grandes cantidades de datos.
 
 A modo de ejemplo, lo primero que haremos sera ejecutar la consulta y comprobar tanto el tiempo como el plan de ejecución de esta.
-```batch
+``` 
 FOR flight IN Flights2
   FILTER flight.day == "15" AND flight.month == "1"
   RETURN flight
@@ -289,9 +292,10 @@ Una vez creado el indice podemos volver a lanzar la consulta y comprobar cual ha
 
 Finalmente, vamos a realizar una leve modificiación sobre la consulta y ver que ocurre.
 
-```batch
+``` 
 FOR flight in Flights2
   FILTER TO_NUMBER(flight.day) > 15 AND flight.month == "1"
   RETURN flight
 ```
+
 Observando el plan de ejecución, podemos ver como el indice que se utiliza es el creado sobre el campo mes, ya que este tipo de indices al ser no ordenados solo sirven para busquedas exactas y no para rangos. 
