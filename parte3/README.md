@@ -31,16 +31,13 @@ Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie
   ```batch
   ctrl + C
   ```
-  - Ingresamos a *localhost:8529* como **userArango**
+  - Ingresamos a *localhost:8529* como **userArango** y seleccionamos la base de datos **Airports** para trabajar sobre ella
   ```batch
   arangosh --server.endpoint tcp://127.0.0.1:8529 --server.username userArango --server.database Airports
   ```
-  - Seleccionamos la base de datos **Airports** para trabajar sobre ella
-  ```batch
-  
-  ```
 
 En segundo lugar realizaremos una serie de consultas para probar la potencia que puede llegar a alcanzar ArangoDB, asi como para conocer el tipo de consultas que podemos realizar con los datos seleccionados.
+
 
 ### Índice de consultas AQL
 
@@ -275,7 +272,7 @@ Después crearemos el primero de los indices que se creará sobre el campo mes. 
 
 Una vez creado el indice podemos volver a lanzar la consulta y comprobar cual ha sido la mejoría respecto a la ejecución anterior. Hecho esto podemos pasar a crear el segundo indice. Para ello, solo habrá que repetir los mismos pasas que en el anterior, cambiando la información introducida en el campo Fields por *day,month* y introduciendo un nombre distinto. Tras ejecutar la misma query podremos ver una mayor mejoría.
 
-Finalmente, vamos a realziar una leve modificiación sobre la consulta y ver que ocurre.
+Finalmente, vamos a realizar una leve modificiación sobre la consulta y ver que ocurre.
 ```batch
 FOR flight in Flights
   FILTER TO_NUMBER(flight.day) > 15 AND flight.MONTH == "1"
