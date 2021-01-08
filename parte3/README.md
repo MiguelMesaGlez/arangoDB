@@ -83,6 +83,10 @@ En segundo lugar realizaremos una serie de consultas para probar la potencia que
       WITH { elevation_ft: 182 
       } IN Airports
   ```
+  
+  ```batch
+    RETURN DOCUMENT("Airports", "KeflavikInternationalAirport")
+  ```
 
   - Delete
   
