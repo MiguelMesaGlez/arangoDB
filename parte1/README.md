@@ -6,25 +6,25 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
 
 1.  Lo primero que vamos a hacer es crear el directorio para instalar arangoDB en /opt.
 
-```bash
+```
   $ sudo mkdir /opt/arangoDB
   $ sudo chown mbd. /opt/arangoDB
 ```
 
 2.  Ahora hay que añadir un repositorio apt de arangoDB al sistema. En este caso utilizaremos la version 3.7.X, la última versión disponible en el momento. Desde el repositorio de arangoDB y elegiremos la opción para Ubuntu.
 
-```batch
+```
   $ echo 'deb https://download.arangodb.com/arangodb37/DEBIAN/ /' | sudo tee /etc/apt/sources.list.d/arangodb.list
 ```
 
 3.  Importamos la GPG key para firmar los paquetes.
-```batch
+```
   $ wget -q https://download.arangodb.com/arangodb37/DEBIAN/Release.key -O- | sudo apt-key add - 
 ```
 
 4.  Actualizar el sistema e instalar arangoDB
 
-```batch
+```
   $ sudo apt update
   $ sudo apt -y install apt-transport-https
   $ sudo apt -y install arangodb3
@@ -53,17 +53,17 @@ Durante la instalación aparecerán ciertas preguntas sobre la configuración qu
      </kbd>
 
 5. Iniciar arangoDB
-```batch
+```
   $ sudo systemctl start arangodb3
   $ sudo systemctl enable arangodb3
 ```
 
 Para comprobar que se ha inciaciado correctamente, podemos utilizar el siguiente comando:
-```batch
+```
   $ systemctl status arangodb3
 ```
 Una vez ejecutado, se mostrará la siguiente información por pantalla y comprobaremos que el estado sea **active(running)**.
-```batch
+```
 ● arangodb3.service - ArangoDB database server
      Loaded: loaded (/lib/systemd/system/arangodb3.service; enabled; vendor preset: enabled)
      Active: active (running) since Mon 2020-12-28 20:28:54 CET; 4 days ago
@@ -91,15 +91,14 @@ dic 28 20:29:10 mbd-VirtualBox arangod[696]: 2020-12-28T19:29:09Z [696] INFO [cf
 ene 01 15:07:58 mbd-VirtualBox arangod[696]: 2021-01-01T14:07:44Z [696] WARNING [3ad54] {engines} slow background settings sync: 3.767773 s
 ene 01 15:07:58 mbd-VirtualBox arangod[696]: 2021-01-01T14:07:58Z [696] WARNING [8bcee] {queries} slow query: 'FOR s in @@collection FILTER s.time >= @start SORT s.time DESC LI>
 ene 01 22:35:41 mbd-VirtualBox arangod[696]: 2021-01-01T21:35:41Z [696] WARNING [3ad54] {engines} slow background settings sync: 1.138017 s
-
 ```
 
 6. Lanzar la shell de arangoDB
-```batch
+```
   $ arangosh
 ```
 Una vez ejecutado este comando solo será necasario introducir la contraseña para el usuario root que hemos creado durante la instalación para acceder a la shell de ArangoDB
-```batch
+```
 Please specify a password: 
 
                                        _     
@@ -123,25 +122,25 @@ Type 'tutorial' for a tutorial or 'help' to see common examples
 
 1. Para realizar la instalación de ArangoDB en el sistema operativo MacOS deberemos ejecutar el siguiente comando en un terminal del ordenador, y se instalará la última version estable de la misma.                  
 
-```batch
+```
   $  brew install arangodb
 ```
  
 2. Para realizar la creación de la instancia de ArangoDB en el sistema operativo MacOS deberemos ejecutar el siguiente comando en un terminal del ordenador, y se instalará la última version estable de la misma.                  
 
-``` batch 
+``` 
   $ /usr/local/Cellar/arangodb/<VERSION>/sbin/arangod &
 ```  
   
 3. El archivo para modificar la configuración predeterminada de ArangoDB es arango.conf, en el encontraremos detallados los parametros que podremos modificar en caso de ser necesario, accederemos a él mediante el siguiente comando:
   
-```batch
+```
   $ /usr/local/etc/arangodb3/arangod.conf
 ```
   
 4. Por otra parte, para finalizar con la instación, en caso de querer ejecutar arango desde el termina, deberemos instalar el Shell, para lo cual ejecutaremos la siguiente línea:
   
-``` batch
+```
   $ /usr/local/Cellar/arangodb/<VERSION>/bin/arangosh
 ```
 
