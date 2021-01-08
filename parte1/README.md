@@ -31,13 +31,14 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
     ```
     Durante la instalación aparecerán ciertas preguntas sobre la configuración que se utilizará para la instalación. 
 
-    * Configurar la contraseña para root.   
-      Introducir la contraseña y confirmarla (password)
+    * Configurar la contraseña para root. Introducir la contraseña y confirmarla (password)
+      
       <kbd>
         <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion1.png" width="750">
       </kbd>
      
     * Seleccionar si actualizar automaticamente los ficheros de la base de datos.
+      
       <kbd> 
         <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion3.png" width="750">
       </kbd>
@@ -48,6 +49,7 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
       * mmfiles
     
     * Configurar para crear un backup de los archivos de la base de datos antes de hacer una actualización
+      
       <kbd>
         <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion4.png" width="750">
       </kbd>
