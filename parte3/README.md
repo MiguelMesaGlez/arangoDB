@@ -21,7 +21,7 @@ Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie
     
   - Creación de un nuevo usuario 
     ej. userArango password: mypwd
-    ```batch
+    ```
       > const users = require('@arangodb/users');
       > users.save('userArango', 'mypwd');
     ```
