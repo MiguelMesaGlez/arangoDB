@@ -2,7 +2,7 @@
 
 El interfaz es una manera más fácil para poder visualizar y crear consultas en la base de datos. Asimismo, te permite realizar gráficos, crear colecciones y databases para una mejor estructura de sus datos.
 <kbd>
-      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/interfaz%20arango%20DB.PNG" width="500" >
+      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/interfaz%20arango%20DB.PNG" width="600" >
 </kbd>
 
 1. Dashboard: Te permite visualizar las estadísticas del uso del interfaz. Además, te brindan las características de la información que has ido registrando y uniendo en la base de    datos.
