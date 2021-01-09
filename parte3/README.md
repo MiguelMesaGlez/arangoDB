@@ -17,6 +17,7 @@ Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie
   - Creación de base de datos **Airports**
     ``` 
       > db._createDatabase('Airports');
+      > db._databases()
     ```
     
   - Creación de un nuevo usuario 
@@ -28,7 +29,7 @@ Primeros pasos antes de comenzar la DEMO, a continuación realizaremos una serie
     
   - Concesión de permisos sobre este nuevo usuario
     ``` 
-      users.grantDatabase('userArango', 'Airports', 'rw');
+      users.grantDatabase('userArango', 'Airports');
     ```
   - Exit de la base de datos _system
   - Exit como usuario **root**
