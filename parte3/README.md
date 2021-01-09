@@ -250,7 +250,7 @@ Para llevar a cabo operaciones de geolocalización, deberemos crear un índice d
 - Escribir el nombre que deseemos en el campo Nombre
 - Hacer click en crear
 
-<img src= "https://github.com/MiguelMesaGlez/arangoDB/blob/demo/ficherosAdicionales/imagenes/GeoJson.png" width = "600">
+<img src= "https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/GeoJson.png" width = "600">
 
 Ejemplo práctico del uso de un índice Geoespacial, con el cual buscamos conocer aquellos aeropuertos más cercanos a una persona estableciendo un rango en concreto, el cual puede ser modificado en función de las necesidades.
 
