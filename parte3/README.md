@@ -78,6 +78,13 @@ Comenzaremos realizando unas consultas básicas que nos permitirán familiarizar
       } INTO Airports
     ```
   - Read
+    
+    Para leer un único documento
+    ```
+      RETURN DOCUMENT("Airports", "KeflavikInternationalAirport")
+    ```
+    
+    Para leer varios documentos
     ``` 
       FOR airport IN Airports
         RETURN airport
@@ -86,12 +93,8 @@ Comenzaremos realizando unas consultas básicas que nos permitirán familiarizar
   - Update
     ```  
       UPDATE "KeflavikInternationalAirport" 
-        WITH { elevation_ft: 182 
-        } IN Airports
-    ```
-  
-    ``` 
-      RETURN DOCUMENT("Airports", "KeflavikInternationalAirport")
+        WITH { elevation_ft: 182} IN Airports
+        RETURN NEW
     ```
 
   - Delete
@@ -111,19 +114,23 @@ Comenzaremos realizando unas consultas básicas que nos permitirán familiarizar
 
 #### I.- Operación de FILTRADO en colecciones
 
-Realizar una consulta en la cual se establece un filtro en el que podemos clasificar por el pais de situación del aeropuerto.
+Realizar una consulta en la cual se establece un filtro para el pais de situación del aeropuerto.
 
 ```  
   FOR airport IN Airports
       FILTER airport.iso_country == "ES"
       RETURN airport.name
  ```
-Se puede filtrar por cualquier tipo de campo que pertenezca a la colección, en este caso se ha optado por filtrar según el nombre del un aeropuerto.
-
+ 
+Se puede filtrar por cualquier tipo de campo que pertenezca a la colección, y modificar los campos que se devuelven. También se pueden incluir multiples filtros a la vez.  En este caso se ha optado por filtrar además de por país por altura del aeropuerto. 
 ```  
   FOR airport IN Airports
-      FILTER airport.name == "London Luton Airport"
-      RETURN airport.iso_country
+      FILTER airport.iso_country == "ES" AND airport.elevation_ft > 1000
+      RETURN {
+        nombre: airport.name,
+        pais: airport.iso_country,
+        altura: airport.elevation_ft
+      }
  ```
  
 <br>
@@ -136,15 +143,15 @@ En este caso podemos optar por dos tipos de merge entre las colecciones, puede s
     FOR c IN Travellers
         RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
   ```
-  > Modificamos el valor de un atributo, de esta manera no es necesario modificar todos los documentos que contienen dicho atributo.
-    ``` 
-      UPDATE "Y" WITH {en: "Young Card" , es: "Carnet Joven" } IN Traits
-    ```
-  > Mostramos nuevamente los viajeros y sus atributos para observar el cambio.
-    ``` 
-      FOR c IN Travellers
-        RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
-    ```
+  Modificamos el valor de un atributo, de esta manera no es necesario modificar todos los documentos que contienen dicho atributo.
+  ``` 
+    UPDATE "Y" WITH {en: "Young Card" , es: "Carnet Joven" } IN Traits
+  ```
+  Mostramos nuevamente los viajeros y sus atributos para observar el cambio.
+  ``` 
+    FOR c IN Travellers
+      RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
+  ```
 
 - Mostrar un trait con filtrado
   ``` 
@@ -165,7 +172,7 @@ En este caso podemos optar por dos tipos de merge entre las colecciones, puede s
 <br>
 
 #### III.- Aplicar FUNCIONES en las colecciones
-En este caso aplicamos dos funciones diferentes que nos aporta ArangoDB las cuales son: *Geo_Point* y *Distance*, estas resultan bastante útiles cuando se quiere
+En este caso utilizaremos dos funciones diferentes de las que dispone ArangoDB: *Geo_Point* y *Distance*, estas resultan bastante útiles cuando se quiere
 conocer situación geográfica de los aeropuertos.
 
 ``` 
@@ -175,8 +182,8 @@ conocer situación geográfica de los aeropuertos.
             SORT DISTANCE(traveller.latitude_deg, traveller.longitude_deg, airport.latitude_deg, airport.longitude_deg)
             LIMIT 3
             RETURN GEO_POINT(airport.longitude_deg, airport.latitude_deg)
-
 ```
+
 <br>
 
 #### IV.- Aplicar OPERACIONES en las colecciones
@@ -197,7 +204,8 @@ Podemos aplicar otro tipo de operaciones, como pueden ser *Limit* y *Sort* las c
                 airportLon:airport.longitude_deg
             }
 ```
-Otra operación a tener en cuenta puede ser *Collect*, en este caso nos permite realizar la agrupación entre los distintos campos de nuestra colección mediante un campo. También nos permite realizar operaciones de agregación.
+
+Otra operación a tener en cuenta puede ser *Collect*, en este caso nos permite realizar la agrupación entre los distintos campos de nuestra colección mediante un campo. También nos permite realizar operaciones de agregación añadiendo *Aggregate*.
 
 ``` 
 FOR airport IN Airports
@@ -281,7 +289,7 @@ FOR flight IN Flights2
   RETURN flight
 ```
 
-Después crearemos el primero de los indices que se creará sobre el campo mes. NOTA: los pasos que describiremos a continuación se deben realizar desde la interzar web de ArangoDB.
+Después crearemos el primero de los indices que se generará sobre el campo mes. NOTA: los pasos que describiremos a continuación se deben realizar desde la interzar web de ArangoDB.
 
 - Acceder al *tab* colecciones
 - Acceder click a la colección de Flights2
