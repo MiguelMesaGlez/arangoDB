@@ -27,13 +27,13 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
     * Configurar la contraseña para root. Introducir la contraseña y confirmarla (password)
       
       <kbd>
-        <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion1.png" width="750">
+        <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/configuracion1.png" width="750">
       </kbd>
      
     * Seleccionar si actualizar automaticamente los ficheros de la base de datos.
       
       <kbd> 
-        <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion3.png" width="750">
+        <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/configuracion3.png" width="750">
       </kbd>
      
     * Elegir motor de almacenamiento de la base de datos a utilizar.
@@ -44,7 +44,7 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
     * Configurar para crear un backup de los archivos de la base de datos antes de hacer una actualización
       
       <kbd>
-        <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion4.png" width="750">
+        <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/configuracion4.png" width="750">
       </kbd>
 
 4. Iniciar arangoDB
@@ -182,23 +182,23 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
 2.  Al descargar el primer archivo, obtienes una ventanilla para iniciar la instalación del interfaz ArangoDB 3.7.5.
 
     <kbd>
-      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window1.png" width="400" >
+      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/window1.png" width="400" >
     </kbd>
 
 3.  La instalación tiene una duración de 2 a 5 minutos y tienes que registrar una contraseña para poder iniciar más adelante y por default, el usuario es root y el programa crea un acceso directo en tu escritorio de Windows.
 
     <kbd>
-      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window2.png" width="400" >
+      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/window2.png" width="400" >
     </kbd>
 
 4.  En el segundo archivo obtienes las herramientas clientes de ArangoDB, la cual te abre una ventana azul para seguir con las instrucciones.
 
     <kbd>
-      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window3.png" width="400" >
+      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/window3.png" width="400" >
     </kbd>
 
 5.  Una vez instalado, te permite iniciar Arango DB iniciando primero la contraseña que hemos registrado en la instalación.
 
     <kbd>
-      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/window4.png" width="400" >
+      <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/main/ficherosAdicionales/imagenes/window4.png" width="400" >
     </kbd>
