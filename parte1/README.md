@@ -4,25 +4,18 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
 
 ## Linux (linea de comando)
 
-1.  Lo primero que vamos a hacer es crear el directorio para instalar arangoDB en /opt.
-
-    ```
-      $ sudo mkdir /opt/arangoDB
-      $ sudo chown mbd. /opt/arangoDB
-    ```
-
-2.  Ahora hay que añadir un repositorio apt de arangoDB al sistema. En este caso utilizaremos la version 3.7.X, la última versión disponible en el momento. Desde el repositorio de arangoDB y elegiremos la opción para Ubuntu.
+1.  Lo primero que vamos a hacer es añadir un repositorio apt de arangoDB al sistema. En este caso utilizaremos la version 3.7.X, la última versión disponible en el momento. Desde el repositorio de arangoDB y elegiremos la opción para Ubuntu.
 
     ```
       $ echo 'deb https://download.arangodb.com/arangodb37/DEBIAN/ /' | sudo tee /etc/apt/sources.list.d/arangodb.list
     ```
 
-3.  Importamos la GPG key para firmar los paquetes.
+2.  Importamos la GPG key para firmar los paquetes.
     ```
       $ wget -q https://download.arangodb.com/arangodb37/DEBIAN/Release.key -O- | sudo apt-key add - 
     ```
 
-4.  Actualizar el sistema e instalar arangoDB
+3.  Actualizar el sistema e instalar arangoDB
 
     ```
       $ sudo apt update
@@ -54,7 +47,7 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
         <img src="https://github.com/MiguelMesaGlez/arangoDB/blob/instalacion/ficherosAdicionales/imagenes/configuracion4.png" width="750">
       </kbd>
 
-5. Iniciar arangoDB
+4. Iniciar arangoDB
    ```
      $ sudo systemctl start arangodb3
      $ sudo systemctl enable arangodb3
@@ -95,7 +88,7 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
    ene 01 22:35:41 mbd-VirtualBox arangod[696]: 2021-01-01T21:35:41Z [696] WARNING [3ad54] {engines} slow background settings sync: 1.138017 s
    ```
 
-6. Lanzar la shell de arangoDB
+5. Lanzar la shell de arangoDB
    ```
      $ arangosh
    ```
