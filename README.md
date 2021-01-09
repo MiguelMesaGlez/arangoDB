@@ -7,8 +7,8 @@ En esta parte se encuentran agrupados los pasos necesarios para llevar a cabo la
   - Instalación en MacOS
   - Instalación en Windows
   
-## Parte II: Primeros Pasos 🚀
-En esta parte se incluye como lanzar una instancia de ArangoDB, así como la manera en la que se debe acceder a su API. Por otra parte, se incluirán algunas operaciones con el lenguaje de consulta AQL a modo de ejemplo.
+## Parte II: Interfaz 🚀
+En esta parte se incluye una breve explicación de las funcionalidades disponibles desde la API proporcionada por ArangoDB. Esto nos será útil para familiarizarnos con el entorno para poder crear las colecciones y lanzar las operaciones de consulta AQL.
 
 ## Parte III: Demo 🛠️
 En esta sección se incorporan todos los archivos necesarios para realizar una demo en la que se mostrarán distintas funcionalidades de ArangoDB
