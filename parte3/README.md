@@ -76,6 +76,7 @@ Comenzaremos realizando unas consultas básicas que nos permitirán familiarizar
           "municipality": "Reykjavík",
           "coordinates":[63.9850006103516, -22.605600357055696]
       } INTO Airports
+      RETURN NEW
     ```
   - Read
     
@@ -152,6 +153,13 @@ En este caso podemos optar por dos tipos de merge entre las colecciones, puede s
     FOR c IN Travellers
       RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].es } )
   ```
+  
+  Además también permite modificar el idioma de los atributos de una forma dinámica
+  ``` 
+    FOR c IN Travellers
+      RETURN MERGE(c, { traits: DOCUMENT("Traits", c.traits)[*].en } )
+  ```
+  
 
 - Mostrar un trait con filtrado
   ``` 
@@ -193,7 +201,8 @@ Podemos aplicar otro tipo de operaciones, como pueden ser *Limit* y *Sort* las c
     FOR traveller IN Travellers
         LIMIT 1
         FOR airport IN Airports
-            SORT DISTANCE(traveller.latitude_deg, traveller.longitude_deg, airport.latitude_deg, airport.longitude_deg)
+            LET dist = DISTANCE(traveller.latitude_deg, traveller.longitude_deg, airport.latitude_deg, airport.longitude_deg)
+            SORT dist 
             LIMIT 3
             RETURN {
                 name:traveller.name,
@@ -201,7 +210,8 @@ Podemos aplicar otro tipo de operaciones, como pueden ser *Limit* y *Sort* las c
                 travellerLat:traveller.latitude_deg,
                 travellerLon:traveller.longitude_deg,
                 airportLat:airport.latitude_deg,
-                airportLon:airport.longitude_deg
+                airportLon:airport.longitude_deg,
+                distancia_km:CEIL(dist/1000)
             }
 ```
 
