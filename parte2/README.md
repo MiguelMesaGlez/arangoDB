@@ -1,4 +1,4 @@
-# Parte II: Interfaz 🚀
+# Parte II: Interfaz 📋
 
 El interfaz es una manera más fácil para poder visualizar y crear consultas en la base de datos. Asimismo, te permite realizar gráficos, crear colecciones y databases para una mejor estructura de sus datos.
 
