@@ -7,7 +7,7 @@ En esta parte se encuentran agrupados los pasos necesarios para llevar a cabo la
   - Instalación en MacOS
   - Instalación en Windows
   
-## Parte II: Interfaz 🚀
+## Parte II: Interfaz 📋
 En esta parte se incluye una breve explicación de las funcionalidades disponibles desde la API proporcionada por ArangoDB. Esto nos será útil para familiarizarnos con el entorno para poder crear las colecciones y lanzar las operaciones de consulta AQL.
 
 ## Parte III: Demo 🛠️
