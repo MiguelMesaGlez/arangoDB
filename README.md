@@ -11,7 +11,7 @@ En esta parte se encuentran agrupados los pasos necesarios para llevar a cabo la
 En esta parte se incluye una breve explicación de las funcionalidades disponibles desde la API proporcionada por ArangoDB. Esto nos será útil para familiarizarnos con el entorno para poder crear las colecciones y lanzar las operaciones de consulta AQL.
 
 ## Parte III: Demo 🛠️
-En esta sección se incorporan todos los archivos necesarios para realizar una demo en la que se mostrarán distintas funcionalidades de ArangoDB
+En esta sección se incorporan todos los archivos necesarios para realizar una demo en la que se mostrarán distintas funcionalidades de ArangoDB. Durante la demo se cubrirán desde las operaciones básicas a consultas más sofisticadas en las que se pueda apreciar todo el potencial de ArangoDB. 
 
 ## Autores de la práctica Grupo 3✒️
 * **Alejandro Lago Prego** - [Alejandro Lago Prego](https://github.com/elKobe)
