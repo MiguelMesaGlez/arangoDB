@@ -113,6 +113,8 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
    127.0.0.1:8529@_system> 
    ```
 
+<br>
+
 ## MacOS
 
 1. Antes de nada, deberá tener instalado el paquete brew para realizar la instalación, para ello debemos ejecutar el siguiente comando
@@ -172,6 +174,8 @@ Dependiendo del sistema operativo que posea su ordenador, deberá tener en cuent
     ```
      
     Se podrá encontrar más información en la siguiente url https://www.arangodb.com/docs/stable/installation-mac-osx.html
+
+<br>
 
 ## Windows 
 
